@@ -84,7 +84,11 @@ h1 { text-align: center; }
 a.topbar-item:hover { color: var(--yellow); }
 
 /* Header */
-.site-header { background: var(--white); box-shadow: 0 1px 0 rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 100; }
+/* The wrapper (not the inner nav) is what's sticky, so its containing block
+   is body (full page height) instead of a short header-only box, that's
+   what keeps it pinned for the whole page instead of unsticking after ~180px. */
+.site-header-wrap { position: sticky; top: 0; z-index: 100; background: var(--black); }
+.site-header { background: var(--white); box-shadow: 0 1px 0 rgba(0,0,0,0.06); }
 .header-inner { display: flex; align-items: center; justify-content: space-between; height: 76px; gap: 20px; }
 .logo-link { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
 .logo-badge {
