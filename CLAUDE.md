@@ -67,14 +67,15 @@ replace CabGrid and WordPress entirely once this is live.
 
 ## Known gaps / next steps
 
-- **Trustindex reviews widget**: the original site embeds a live
-  Trustindex-powered Google reviews widget (5.0 stars, 88 reviews at time of
-  writing). The actual review text is Bernard's real customer data pulled
-  live from Google via Trustindex, not something to hardcode into the repo.
-  A placeholder lives in `src/pages/home/en/content.html` (search "TODO").
-  Get the real embed snippet from Bernard's Trustindex dashboard and wire
-  it in, the same way taxisibenik.hr's footer does
-  (`cdn.trustindex.io/loader-cert.js?<id>`).
+- **Trustindex reviews widget**: DONE. Three live embeds from Bernard's
+  Trustindex dashboard are wired in (`cdn.trustindex.io/loader.js?<id>`,
+  not the `loader-cert.js` variant taxisibenik.hr uses): a compact badge
+  (`d329dbc7...`) in the hero/trust-strip spot on home, airport-transfers,
+  intercity-transfers and contact; a full review grid (`39b03747...`) on
+  the homepage reviews section; a footer badge (`a5001877...`) in
+  `src/partials/footer.html`. All three verified rendering live content in
+  the browser. The footer one lazy-loads on scroll into view, so it may
+  read empty if checked immediately after page load without scrolling.
 - **Opening hours**: not published anywhere on the original site beyond "on
   demand during working hours". Ask Bernard for his actual hours before
   publishing an `openingHoursSpecification` in the LocalBusiness schema.
