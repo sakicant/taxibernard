@@ -69,6 +69,8 @@ h1 { text-align: center; }
 .btn-primary:hover { background: var(--yellow-dark); }
 .btn-secondary { background: transparent; color: var(--black); border-color: var(--black); }
 .btn-secondary:hover { background: var(--black); color: var(--white); }
+.btn-whatsapp { background: #25d366; color: var(--white); display: inline-flex; align-items: center; gap: 8px; }
+.btn-whatsapp:hover { background: #1ebc59; }
 .header-cta { display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
 .btn-compact { padding: 9px 16px; font-size: 0.82rem; }
 .btn[href*="wa.me"] { background: #25d366; color: var(--white); border-color: #25d366; }
