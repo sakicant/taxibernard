@@ -227,7 +227,7 @@ section { padding: 64px 0; }
 .vehicle-section { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: center; }
 .vehicle-section img { border-radius: 14px; }
 .vehicle-copy p { margin-bottom: 16px; color: var(--gray-800); }
-.vehicle-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 20px; }
+.vehicle-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 20px; }
 .vehicle-gallery img { border-radius: 10px; aspect-ratio: 4/3; object-fit: cover; }
 
 /* Pricing table */
