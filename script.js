@@ -62,6 +62,10 @@ if (quoteWidget) {
       'Zagreb': 490,
       'Dubrovnik': 490,
       'Makarska': 210,
+      'Tisno': 50,
+      'Jezera': 55,
+      'Pirovac': 50,
+      'Betina': 70,
       'Split Airport (SPU)': 115,
       'Zadar Airport (ZAD)': 100,
       'Zagreb Airport (ZAG)': 480,
@@ -69,9 +73,15 @@ if (quoteWidget) {
     }
   };
 
+  // Towns close enough to Vodice to be a meter-rate "local" ride rather than
+  // a fixed-price trip. Cross-pairs among these (e.g. Vodice to Tribunj)
+  // have no PRICES entry on purpose, Bernard quotes those directly, same as
+  // any other unlisted route (see priceOneWay's null fallback below).
+  const LOCAL_ZONE = ['Vodice', 'Srima', 'Tribunj'];
+
   const GROUPS = [
-    { label: 'Vodice (local rides)', items: ['Vodice'] },
-    { label: 'Fixed-price destinations', items: ['Šibenik', 'Split', 'Zadar', 'Murter', 'Skradin', 'Zagreb', 'Dubrovnik', 'Makarska'] },
+    { label: 'Vodice (local rides)', items: LOCAL_ZONE },
+    { label: 'Fixed-price destinations', items: ['Šibenik', 'Split', 'Zadar', 'Murter', 'Skradin', 'Zagreb', 'Dubrovnik', 'Makarska', 'Tisno', 'Jezera', 'Pirovac', 'Betina'] },
     { label: 'Airports', items: ['Split Airport (SPU)', 'Zadar Airport (ZAD)', 'Zagreb Airport (ZAG)', 'Dubrovnik Airport (DBV)'] }
   ];
 
@@ -254,10 +264,10 @@ if (quoteWidget) {
     const pax = parseInt(passengers, 10);
     const feeNote = pax >= 5 ? ' <span class="quote-price-note">+ small fee for 5-6 passengers, confirmed with Bernard.</span>' : '';
 
-    if (from === to && from === 'Vodice') {
+    if (from === to && LOCAL_ZONE.includes(from)) {
       const url = bookingUrl({ ...base, priceParam: 'meter' });
       quoteResult.innerHTML =
-        '<p>A local ride within Vodice (and nearby Tribunj, Gaćelezi, Čista Velika, Čista Mala, Tisno and Pirovac) is charged by the taxi meter: start &euro;3, then &euro;4/km. See the <a href="/#pricing">local rates</a>.</p>' +
+        '<p>A local ride within ' + from + ' (and nearby Gaćelezi, Čista Velika and Čista Mala) is charged by the taxi meter: start &euro;3, then &euro;4/km. See the <a href="/#pricing">local rates</a>.</p>' +
         '<a class="btn btn-primary quote-btn" href="' + url + '">Book Now</a>';
       return;
     }

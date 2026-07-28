@@ -61,9 +61,20 @@ replace CabGrid and WordPress entirely once this is live.
 - Fixed prices cover up to 4 passengers; a small additional fee applies for
   5-6 (contact Bernard for the exact amount, not published as a fixed
   number anywhere on the original site).
-- Local rides (Vodice and nearby Tribunj, Gaćelezi, Čista Velika, Čista
-  Mala, Tisno, Pirovac) use the meter: start €3, then €4/km, plus
-  €0.42/minute waiting time.
+- Local rides (Vodice, Srima, Tribunj and nearby Gaćelezi, Čista Velika,
+  Čista Mala) use the meter: start €3, then €4/km, plus €0.42/minute
+  waiting time. `LOCAL_ZONE` in script.js is the source of truth for which
+  towns count as "local" in the quote widget.
+- Fixed-price destinations added 2026-07-28: Tisno (€50), Jezera (€55),
+  Pirovac (€50), Betina (€70), matched against taxisibenik.hr's own
+  Vodice-anchored price matrix (script.js, "Vodice"/reverse entries) since
+  Bernard hadn't quoted these himself yet. Murter (€45) was already set
+  from Bernard's real site and was left untouched.
+- **Missing prices to get from Bernard**: the local-zone cross-pairs have
+  no fixed price on purpose (intentionally left out of PRICES so the quote
+  widget falls back to "Bernard will quote you directly"): Vodice&ndash;Srima,
+  Vodice&ndash;Tribunj, Srima&ndash;Tribunj. Once Bernard gives real numbers, add
+  them to PRICES.Vodice (and PRICES.Srima for the Srima&ndash;Tribunj pair).
 
 ## Known gaps / next steps
 
