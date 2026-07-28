@@ -1,6 +1,22 @@
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+// The Trustindex widget scripts scan the page for contact info and clone the
+// topbar's mailto link as a stray, invisible tracking element right after
+// .topbar. It has no visible content of its own, but its presence still
+// pushes .site-header down by one empty line, which reads as a stray third
+// color (the cream body background) briefly showing through the header.
+// Strip any .topbar-item clone that lands outside the real topbar markup,
+// both immediately and whenever new nodes show up later (the widgets load
+// async).
+function stripStrayTopbarClones() {
+  document.querySelectorAll('.topbar-item').forEach((el) => {
+    if (!el.closest('.topbar-inner')) el.remove();
+  });
+}
+stripStrayTopbarClones();
+new MutationObserver(stripStrayTopbarClones).observe(document.body, { childList: true, subtree: true });
+
 const whatsappFloat = document.querySelector('.whatsapp-float');
 if (whatsappFloat) {
   setTimeout(() => whatsappFloat.classList.add('visible'), 3000);
