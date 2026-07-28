@@ -1,0 +1,43 @@
+{
+  "slug": "airport-transfers",
+  "title": "Vodice Airport Transfers | starting from 100€ | TAXI Bernard",
+  "description": "Fixed-price Vodice airport transfers to Split and Zadar Airport. No taxi meter, no surprises, luggage included. Book directly with Bernard.",
+  "keywords": "vodice airport transfer, taxi vodice split airport, taxi vodice zadar airport",
+  "og_image": "https://taxivodice.hr/assets/img/espace-6-seats.webp",
+  "schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How will I find my driver at the airport?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Bernard will be waiting for you in the arrivals hall after baggage claim, ready to help with your luggage. If you'd like, you can confirm pickup details in advance through the contact page." }
+      },
+      {
+        "@type": "Question",
+        "name": "What if my flight is delayed?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No problem. Flights are monitored in real time, so if your flight is delayed, your pickup time is adjusted automatically at no extra charge." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the price per person or per vehicle?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The price is per vehicle, not per person. It covers up to 4 passengers and luggage at no extra cost, with a small additional fee for 5 or 6 passengers." }
+      },
+      {
+        "@type": "Question",
+        "name": "How far in advance should I book a Vodice airport transfer?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Advance booking is recommended to guarantee availability, especially during peak summer season or for early morning and late night flights. You can book directly through the contact page." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you provide child seats?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, child seats and booster seats are available on request, just mention it when booking your transfer." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I also book a transfer to Šibenik or other nearby towns?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, Bernard also covers intercity routes including Šibenik and Skradin. See the intercity transfers page for details." }
+      }
+    ]
+  }
+}

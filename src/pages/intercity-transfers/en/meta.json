@@ -1,0 +1,48 @@
+{
+  "slug": "intercity-transfers",
+  "title": "Vodice Transfers | TAXI Bernard",
+  "description": "Fixed-price transfers from Vodice to Šibenik, Split, Zadar, Skradin, Zagreb, Dubrovnik and Makarska. No taxi meter, no surprises. Book directly with Bernard.",
+  "keywords": "vodice transfers, taxi vodice sibenik, taxi vodice split, taxi vodice zadar, taxi vodice skradin",
+  "og_image": "https://taxivodice.hr/assets/img/espace-6-seats.webp",
+  "schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How far in advance should I book a Vodice transfer?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Advance booking is recommended to guarantee availability, especially during peak summer season. You can book directly through the contact page." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the price per person or per vehicle?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The price is per vehicle, not per person. It covers up to 4 passengers and luggage at no extra cost, with a small additional fee for 5 or 6 passengers." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I book a one-way or round trip ride?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Both options are available. Just let Bernard know your plans when booking, and he'll arrange the pickup time that works for you." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer hotel or address pickup?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, Bernard will pick you up directly from your hotel, apartment, or any address in Vodice, no need to meet at a central location." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I make a stop along the way?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Short stops can usually be arranged, just mention it when booking so Bernard can plan the route and timing accordingly." }
+      },
+      {
+        "@type": "Question",
+        "name": "What if my destination isn't listed?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No problem, contact Bernard directly through the contact page with your destination for a custom price quote." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you accept card payments?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, card payments are accepted." }
+      }
+    ]
+  }
+}

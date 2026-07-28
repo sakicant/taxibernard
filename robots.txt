@@ -1,0 +1,31 @@
+# robots.txt for taxivodice.hr
+# All crawlers, including AI assistants, are welcome to index the public site.
+
+User-agent: *
+Disallow: /booking-submit.php
+Disallow: /contact.php
+Allow: /
+
+# AI crawlers (explicitly allowed to read and cite the site)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://taxivodice.hr/sitemap.xml
