@@ -251,8 +251,8 @@ section { padding: 64px 0; }
 .route-card-head .route-sub { font-size: 0.8rem; color: var(--gray-600); }
 .route-price-box { background: var(--black); color: var(--white); text-align: center; padding: 14px; font-family: var(--font-head); font-size: 1.6rem; font-weight: 700; }
 .route-price-box span { font-family: var(--font-body); font-size: 0.7rem; font-weight: 500; color: var(--gray-400); display: block; margin-top: 2px; }
-.route-facts-list { list-style: none; padding: 16px 20px; font-size: 0.85rem; color: var(--gray-800); flex: 1; }
-.route-facts-list li { display: flex; align-items: center; gap: 8px; padding: 5px 0; }
+.route-facts-list { list-style: none; padding: 16px 20px; font-size: 0.85rem; color: var(--gray-800); flex: 1; text-align: center; }
+.route-facts-list li { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 5px 0; }
 .route-facts-list li svg { flex-shrink: 0; color: var(--yellow-dark); }
 .route-card-foot { padding: 0 20px 20px; text-align: center; }
 .route-card-foot .btn { width: 100%; margin-bottom: 8px; }

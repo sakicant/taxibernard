@@ -71,6 +71,14 @@
             "@type": "Answer",
             "text": "Advance booking is recommended to guarantee availability, especially during peak summer season. For a last-minute ride, call or WhatsApp Bernard directly."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Bernard take more than 4 passengers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Bernard's Renault Espace seats up to 6 passengers. A small additional fee applies for 5 or 6 passengers, contact Bernard for the exact amount."
+          }
         }
       ]
     }
