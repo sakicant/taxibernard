@@ -82,7 +82,9 @@ replace CabGrid and WordPress entirely once this is live.
     priced on this site before), Bernard says €45 (site is €15 higher)
   - Primošten: site says €70 (from taxisibenik.hr's matrix, wasn't priced
     on this site before), Bernard says €80 (site is €10 lower)
-  Betina (€70) wasn't in Bernard's latest list at all, left untouched.
+  Betina wasn't in Bernard's 2026-07-29 list, but per Bernard's own price
+  list it's the same fare as Murter (bridge-connected island towns), so
+  it's set to €50 to match Murter rather than left at the old €70 guess.
 
 ## Known gaps / next steps
 

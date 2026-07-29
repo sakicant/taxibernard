@@ -65,7 +65,7 @@ if (quoteWidget) {
       'Tisno': 30,
       'Jezera': 40,
       'Pirovac': 30,
-      'Betina': 70,
+      'Betina': 50,
       'Srima': 15,
       'Tribunj': 15,
       'Lozovac': 60,
