@@ -9,7 +9,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180.png">
 <meta name="theme-color" content="#111111">
 <title>Book Your Taxi | TAXI Vodice Bernard</title>
-<meta name="description" content="Book your Vodice taxi or transfer directly with Bernard. Fixed prices, no advance payment, confirmed by phone, WhatsApp or email.">
+<meta name="description" content="Book your Vodice taxi or transfer directly with Bernard. Fixed prices, confirmed by advance payment, by email or WhatsApp.">
 <meta name="keywords" content="book taxi vodice, vodice taxi booking, taxi bernard booking">
 <link rel="canonical" href="https://taxivodice.hr/book/">
 <link rel="alternate" hreflang="en" href="https://taxivodice.hr/book/">
@@ -17,14 +17,14 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Book Your Taxi | TAXI Vodice Bernard">
-<meta property="og:description" content="Book your Vodice taxi or transfer directly with Bernard. Fixed prices, no advance payment, confirmed by phone, WhatsApp or email.">
+<meta property="og:description" content="Book your Vodice taxi or transfer directly with Bernard. Fixed prices, confirmed by advance payment, by email or WhatsApp.">
 <meta property="og:image" content="https://taxivodice.hr/assets/og-image.jpg">
 <meta property="og:url" content="https://taxivodice.hr/book/">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=4983ee011e">
+<link rel="stylesheet" href="/styles.css?v=75fc7b0a3f">
 
 </head>
 <body>
@@ -75,7 +75,7 @@
     <div class="container">
       <span class="eyebrow">Booking</span>
       <h1>Book Your Taxi</h1>
-      <p class="page-hero-sub">Add your travel details below and Bernard will confirm your ride directly, usually within a few hours. No advance payment needed.</p>
+      <p class="page-hero-sub">Add your travel details below. Bernard will confirm your ride directly, usually within a few hours, and send instructions for the advance payment that confirms your reservation.</p>
     </div>
   </section>
 
@@ -138,11 +138,39 @@
         <label for="book-name">Name</label>
         <input type="text" id="book-name" name="name" required>
 
-        <label for="book-email">Email</label>
-        <input type="email" id="book-email" name="email" required>
+        <div class="form-choice" role="group" aria-labelledby="contact-method-legend">
+          <span class="form-choice-legend" id="contact-method-legend">How should Bernard reach you to confirm?</span>
+          <div class="form-choice-options">
+            <label class="form-choice-option">
+              <input type="radio" name="contact_method" value="email" required>
+              <span>Email</span>
+            </label>
+            <label class="form-choice-option">
+              <input type="radio" name="contact_method" value="whatsapp" required>
+              <span>WhatsApp</span>
+            </label>
+          </div>
+        </div>
 
-        <label for="book-phone">Phone / WhatsApp</label>
-        <input type="tel" id="book-phone" name="phone" required placeholder="Include country code">
+        <label for="book-email">Email <span class="field-flag" id="email-flag"></span></label>
+        <input type="email" id="book-email" name="email">
+
+        <label for="book-phone">Phone / WhatsApp <span class="field-flag" id="phone-flag"></span></label>
+        <input type="tel" id="book-phone" name="phone" placeholder="Include country code">
+
+        <div class="form-choice" role="group" aria-labelledby="payment-legend">
+          <span class="form-choice-legend" id="payment-legend">How would you like to pay?</span>
+          <div class="form-choice-options">
+            <label class="form-choice-option">
+              <input type="radio" name="payment_option" value="deposit" required>
+              <span>Deposit to confirm<span class="opt-sub">20% now (minimum &euro;20).</span></span>
+            </label>
+            <label class="form-choice-option">
+              <input type="radio" name="payment_option" value="full" required>
+              <span>Pay in full<span class="opt-sub">Settle the whole fare upfront.</span></span>
+            </label>
+          </div>
+        </div>
 
         <label for="book-flight">Flight number (if arriving by air)</label>
         <input type="text" id="book-flight" name="book-flight" placeholder="e.g. FR1234, so Bernard can track it">
@@ -153,7 +181,17 @@
         <label for="book-notes">Anything else? (optional)</label>
         <textarea id="book-notes" name="book-notes" rows="4" placeholder="Child seat, extra stops, oversized luggage, pickup instructions..."></textarea>
 
+        <label class="form-consent">
+          <input type="checkbox" id="book-invoice" name="invoice_required" value="1">
+          <span>I need an invoice for my company.</span>
+        </label>
+
         <input type="text" id="book-company" name="company" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <label class="form-consent">
+          <input type="checkbox" id="book-consent" name="consent" value="1" required>
+          <span>I understand that I am now only sending a booking request and that Bernard will contact me via my preferred contact method to confirm the booking (by paying the required deposit). I also agree to the <a href="/terms-and-conditions/">Terms and Conditions</a> and <a href="/privacy-policy/">Privacy Policy</a>.</span>
+        </label>
 
         <button type="submit" class="btn btn-primary">Send Booking Request</button>
         <p class="form-note" id="booking-page-note"></p>
@@ -224,6 +262,6 @@
   </svg>
 </a>
 
-<script src="/script.js?v=4983ee011e"></script>
+<script src="/script.js?v=75fc7b0a3f"></script>
 </body>
 </html>

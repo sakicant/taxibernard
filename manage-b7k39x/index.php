@@ -5,7 +5,7 @@ tx_auto_complete_bookings();
 $STATUSES = ['new', 'confirmed', 'completed', 'cancelled'];
 // Owner-facing labels for the workflow states.
 $STATUS_LABELS = [
-    'new'       => 'Booking (unconfirmed)',
+    'new'       => 'Booking (unpaid)',
     'confirmed' => 'Upcoming (confirmed)',
     'completed' => 'Completed',
     'cancelled' => 'Cancelled',

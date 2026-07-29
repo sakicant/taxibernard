@@ -8,7 +8,7 @@ $stmt->execute([$id]);
 $b = $stmt->fetch();
 
 $STATUSES = ['new', 'confirmed', 'completed', 'cancelled'];
-$STATUS_LABELS = ['new' => 'Booking (unconfirmed)', 'confirmed' => 'Upcoming (confirmed)', 'completed' => 'Completed', 'cancelled' => 'Cancelled'];
+$STATUS_LABELS = ['new' => 'Booking (unpaid)', 'confirmed' => 'Upcoming (confirmed)', 'completed' => 'Completed', 'cancelled' => 'Cancelled'];
 $PAYMENTS = ['unpaid' => 'Unpaid', 'deposit' => 'Deposit paid', 'paid' => 'Paid in full'];
 
 $csrf = tx_csrf_token();
@@ -72,10 +72,13 @@ function gcal_link($title, $start, $end, $details, $location) {
           <div><span>Luggage</span><strong><?= (int) $b['luggage'] ?></strong></div>
           <div><span>Quoted price</span><strong><?= $b['quoted_price'] ? e($b['quoted_price']) : 'custom' ?></strong></div>
           <div><span>Name</span><strong><?= e($b['customer_name']) ?></strong></div>
-          <div><span>Email</span><strong><a href="mailto:<?= e($b['customer_email']) ?>"><?= e($b['customer_email']) ?></a></strong></div>
+          <div><span>Email</span><strong><?= $b['customer_email'] ? '<a href="mailto:' . e($b['customer_email']) . '">' . e($b['customer_email']) . '</a>' : '&mdash;' ?></strong></div>
           <div><span>Phone</span><strong><?= $b['customer_phone'] ? e($b['customer_phone']) : '&mdash;' ?></strong></div>
           <?php if ($b['flight']): ?><div><span>Flight / pickup details</span><strong><?= e($b['flight']) ?></strong></div><?php endif; ?>
           <?php if (!empty($b['dropoff_details'])): ?><div><span>Destination details</span><strong><?= e($b['dropoff_details']) ?></strong></div><?php endif; ?>
+          <?php if (!empty($b['contact_method'])): ?><div><span>Preferred contact</span><strong><?= $b['contact_method'] === 'whatsapp' ? 'WhatsApp' : 'Email' ?></strong></div><?php endif; ?>
+          <?php if (!empty($b['payment_option'])): ?><div><span>Payment choice</span><strong><?= $b['payment_option'] === 'full' ? 'Pay in full' : 'Deposit (20%, min &euro;20)' ?></strong></div><?php endif; ?>
+          <?php if (!empty($b['invoice_required'])): ?><div><span>Company invoice</span><strong>Requested</strong></div><?php endif; ?>
         </div>
 
         <?php if ($b['notes']): ?><p class="booking-notes"><span>Customer notes:</span> <?= e($b['notes']) ?></p><?php endif; ?>
@@ -84,7 +87,7 @@ function gcal_link($title, $start, $end, $details, $location) {
           $calDetails = implode("\n", array_filter([
               'Customer: ' . $b['customer_name'],
               'Phone: ' . ($b['customer_phone'] ?: 'not provided'),
-              'Email: ' . $b['customer_email'],
+              'Email: ' . ($b['customer_email'] ?: 'not provided'),
               'Passengers: ' . (int) $b['passengers'] . ', Luggage: ' . (int) $b['luggage'],
               'Price: ' . ($b['quoted_price'] ?: 'custom'),
               'Trip: ' . ($b['trip_type'] === 'return' ? 'Return' : 'One way'),
@@ -137,7 +140,7 @@ function gcal_link($title, $start, $end, $details, $location) {
           <label class="booking-edit-notes">Private notes (only you see these)
             <textarea name="admin_notes" rows="3" placeholder="Add a private note..."><?= e($b['admin_notes']) ?></textarea>
           </label>
-          <p class="booking-edit-hint">Marking a booking as confirmed lets Bernard track it as an upcoming ride.</p>
+          <p class="booking-edit-hint">Marking a deposit or full payment on a new booking moves it to Upcoming automatically.</p>
           <button type="submit" class="admin-btn">Save changes</button>
         </form>
 

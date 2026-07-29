@@ -363,7 +363,23 @@ section { padding: 64px 0; }
 .form-hint { font-size: 0.82rem; color: var(--gray-600); margin-top: 10px; }
 .form-consent { display: flex; align-items: flex-start; gap: 10px; font-weight: 500 !important; font-size: 0.86rem !important; }
 .form-consent input { width: auto !important; margin-top: 3px; }
+.form-consent a { color: var(--yellow-dark); text-decoration: underline; }
 .hp-field { position: absolute !important; left: -9999px !important; width: 1px !important; height: 1px !important; }
+
+/* Booking form: contact-method / payment-option choice groups */
+.field-flag { font-weight: 400; color: var(--gray-600); font-size: 0.78rem; }
+.form-choice { margin: 18px 0 6px; }
+.form-choice-legend { display: block; font-size: 0.82rem; font-weight: 600; color: var(--gray-600); margin-bottom: 8px; }
+.form-choice-options { display: flex; flex-wrap: wrap; gap: 10px; }
+.form-choice-option {
+  flex: 1 1 180px; display: flex; align-items: flex-start; gap: 10px; margin: 0; padding: 12px 14px;
+  background: var(--white); border: 1px solid var(--gray-200); border-radius: 6px;
+  font-size: 0.92rem; font-weight: 400; color: var(--black); cursor: pointer; transition: border-color 0.15s, background 0.15s;
+}
+.form-choice-option:hover { border-color: var(--yellow); }
+.form-choice-option input { width: 16px; height: 16px; margin: 2px 0 0; flex-shrink: 0; accent-color: var(--yellow-dark); }
+.form-choice-option:has(input:checked) { border-color: var(--yellow); background: var(--cream-soft); }
+.form-choice-option .opt-sub { display: block; margin-top: 3px; font-size: 0.78rem; font-weight: 400; color: var(--gray-600); line-height: 1.4; }
 .booking-page { max-width: 640px; margin: 0 auto; }
 .booking-price-line { background: var(--cream-soft); border-radius: 8px; padding: 12px 16px; margin-top: 16px; font-size: 0.92rem; }
 .booking-price-sub { color: var(--gray-600); font-size: 0.82rem; }

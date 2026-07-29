@@ -384,6 +384,24 @@ if (bookingPageForm) {
   tripEl.addEventListener('change', syncReturn);
   syncReturn();
 
+  // Contact method picks which of email/phone is actually required, and
+  // flags the other as optional, so the two fields stay simple text inputs
+  // without duplicating a whole "how do I reach you" question twice.
+  const emailEl = document.getElementById('book-email');
+  const phoneEl = document.getElementById('book-phone');
+  const emailFlag = document.getElementById('email-flag');
+  const phoneFlag = document.getElementById('phone-flag');
+  const applyContactPref = () => {
+    const chosen = bookingPageForm.querySelector('input[name="contact_method"]:checked');
+    const v = chosen ? chosen.value : '';
+    if (emailEl) emailEl.required = v === 'email';
+    if (phoneEl) phoneEl.required = v === 'whatsapp';
+    if (emailFlag) emailFlag.textContent = v ? '(' + (v === 'email' ? 'required' : 'optional') + ')' : '';
+    if (phoneFlag) phoneFlag.textContent = v ? '(' + (v === 'whatsapp' ? 'required' : 'optional') + ')' : '';
+  };
+  bookingPageForm.querySelectorAll('input[name="contact_method"]').forEach((r) => r.addEventListener('change', applyContactPref));
+  applyContactPref();
+
   const bookingPageNote = document.getElementById('booking-page-note');
 
   const todayStr = new Date().toISOString().slice(0, 10);
@@ -392,19 +410,34 @@ if (bookingPageForm) {
   if (bookDateEl) bookDateEl.min = todayStr;
   if (bookReturnDateEl) bookReturnDateEl.min = todayStr;
 
+  // Bernard confirms bookings by hand, so give him a minimum runway: reject
+  // a pickup less than 2 hours out and point the customer at a faster
+  // channel (call/WhatsApp) instead.
+  const MIN_NOTICE_MS = 2 * 60 * 60 * 1000;
+
   bookingPageForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const from = fromEl.value.trim();
     const to = toEl.value.trim();
     const name = document.getElementById('book-name').value.trim();
-    const email = document.getElementById('book-email').value.trim();
-    const phone = document.getElementById('book-phone').value.trim();
+    const email = emailEl.value.trim();
+    const phone = phoneEl.value.trim();
     const date = document.getElementById('book-date').value;
     const time = document.getElementById('book-time').value;
+    const contactMethodEl = bookingPageForm.querySelector('input[name="contact_method"]:checked');
+    const paymentOptionEl = bookingPageForm.querySelector('input[name="payment_option"]:checked');
+    const consentEl = document.getElementById('book-consent');
+    const contactOk = contactMethodEl && (contactMethodEl.value === 'email' ? email : phone);
 
-    if (!from || !to || !name || !email || !phone || !date || !time) {
-      bookingPageNote.textContent = 'Please fill in the pickup and drop-off, your name, email, phone, pickup date and time.';
+    if (!from || !to || !name || !date || !time || !contactOk || !paymentOptionEl || !consentEl.checked) {
+      bookingPageNote.textContent = 'Please fill in the pickup and drop-off, your name, preferred contact, payment choice, pickup date and time, and accept the Terms and Conditions.';
+      return;
+    }
+
+    const pickupAt = new Date(date + 'T' + time);
+    if (isNaN(pickupAt.getTime()) || pickupAt.getTime() - Date.now() < MIN_NOTICE_MS) {
+      bookingPageNote.textContent = 'Please choose a pickup at least 2 hours from now. For a sooner ride, call or WhatsApp Bernard directly.';
       return;
     }
 
@@ -429,6 +462,10 @@ if (bookingPageForm) {
       body.append('dropoff_details', document.getElementById('book-dropoff-details').value.trim());
       body.append('notes', document.getElementById('book-notes').value.trim());
       body.append('company', document.getElementById('book-company').value);
+      body.append('contact_method', contactMethodEl.value);
+      body.append('payment_option', paymentOptionEl.value);
+      body.append('invoice_required', document.getElementById('book-invoice').checked ? '1' : '');
+      body.append('consent', consentEl.checked ? '1' : '');
 
       const response = await fetch('/booking-submit.php', {
         method: 'POST',
@@ -438,8 +475,9 @@ if (bookingPageForm) {
       const data = await response.json().catch(() => null);
 
       if (response.ok && data && data.success) {
-        bookingPageNote.textContent = 'Thanks! Your booking request has been received. Bernard will confirm directly by phone, WhatsApp or email shortly, no advance payment needed.';
+        bookingPageNote.textContent = 'Thanks! Your booking request has been received. Bernard will email you soon to confirm availability and send instructions for the advance payment that fully confirms your reservation.';
         bookingPageForm.reset();
+        applyContactPref();
       } else {
         bookingPageNote.textContent = (data && data.error) || 'Something went wrong. Please call or WhatsApp Bernard instead.';
       }

@@ -52,13 +52,32 @@ $flight      = field('flight', 120);
 $dropoffDet  = field('dropoff_details', 120);
 $notes       = isset($_POST['notes']) ? mb_substr(trim((string) $_POST['notes']), 0, 2000) : '';
 
+// Contact method / payment option only ever come from the form's own radio
+// groups, so anything else submitted is dropped rather than stored.
+$contactMethod = field('contact_method', 20);
+$paymentOption = field('payment_option', 20);
+$invoiceReq    = !empty($_POST['invoice_required']) ? 1 : 0;
+$consent       = !empty($_POST['consent']);
+if ($contactMethod !== 'whatsapp' && $contactMethod !== 'email') $contactMethod = '';
+if ($paymentOption !== 'full' && $paymentOption !== 'deposit') $paymentOption = '';
+
 $errors = [];
 if ($pickup === '' || $dropoff === '') $errors[] = 'pickup and destination';
 if ($name === '') $errors[] = 'your name';
-if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = 'a valid email';
-if ($phone === '') $errors[] = 'a phone number';
 if ($pickupDate === '') $errors[] = 'pickup date';
 if ($pickupTime === '') $errors[] = 'pickup time';
+if ($contactMethod === '') $errors[] = 'a preferred contact method';
+if ($paymentOption === '') $errors[] = 'a payment choice';
+if (!$consent) $errors[] = 'agreement to the Terms and Conditions';
+
+// Email is required whenever it's the chosen contact method, and validated
+// whenever it's provided at all (WhatsApp bookers can still add one).
+if ($contactMethod === 'email' && ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL))) {
+    $errors[] = 'a valid email';
+} elseif ($email !== '' && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $errors[] = 'a valid email';
+}
+if ($contactMethod === 'whatsapp' && $phone === '') $errors[] = 'a phone number';
 
 if ($errors) {
     http_response_code(400);
@@ -105,11 +124,13 @@ try {
         'INSERT INTO bookings
          (created_at, pickup, dropoff, trip_type, pickup_date, pickup_time,
           return_date, return_time, passengers, luggage, quoted_price,
-          customer_name, customer_email, customer_phone, flight, dropoff_details, notes)
+          customer_name, customer_email, customer_phone, flight, dropoff_details, notes,
+          contact_method, payment_option, invoice_required)
          VALUES
          (NOW(), :pickup, :dropoff, :trip, :pdate, :ptime,
           :rdate, :rtime, :pax, :lug, :price,
-          :name, :email, :phone, :flight, :dropoff_details, :notes)'
+          :name, :email, :phone, :flight, :dropoff_details, :notes,
+          :contact_method, :payment_option, :invoice_required)'
     );
     $stmt->execute([
         ':pickup' => $pickup,
@@ -123,11 +144,14 @@ try {
         ':lug' => $luggage,
         ':price' => $nn($price),
         ':name' => $name,
-        ':email' => $email,
+        ':email' => $nn($email),
         ':phone' => $nn($phone),
         ':flight' => $nn($flight),
         ':dropoff_details' => $nn($dropoffDet),
         ':notes' => $notes === '' ? null : $notes,
+        ':contact_method' => $contactMethod,
+        ':payment_option' => $paymentOption,
+        ':invoice_required' => $invoiceReq,
     ]);
     $id = tx_db()->lastInsertId();
 } catch (PDOException $e) {
@@ -149,16 +173,20 @@ if ($trip === 'return') {
 $lines[] = "Passengers: {$passengers}   Luggage: {$luggage}";
 $lines[] = 'Quoted price: ' . ($price !== '' ? '€' . $price : 'custom');
 $lines[] = "Name: {$name}";
-$lines[] = "Email: {$email}";
-$lines[] = "Phone: {$phone}";
+if ($email !== '') $lines[] = "Email: {$email}";
+if ($phone !== '') $lines[] = "Phone: {$phone}";
+$lines[] = 'Preferred contact: ' . ($contactMethod === 'whatsapp' ? 'WhatsApp' : 'Email');
+$lines[] = 'Payment choice: ' . ($paymentOption === 'full' ? 'Pay in full' : 'Deposit to confirm (20%, min €20)');
+if ($invoiceReq) $lines[] = 'Company invoice: requested';
 if ($flight !== '') $lines[] = "Flight / pickup details: {$flight}";
 if ($dropoffDet !== '') $lines[] = "Destination details: {$dropoffDet}";
 if ($notes !== '') $lines[] = "Notes: {$notes}";
 $summary = implode("\n", $lines);
 
 $c = tx_config();
+$replyTo = $email !== '' ? $email : $c['admin_email'];
 $headers = 'From: TAXI Bernard <' . $c['mail_from'] . ">\r\n" .
-           'Reply-To: ' . $email . "\r\n" .
+           'Reply-To: ' . $replyTo . "\r\n" .
            "Content-Type: text/plain; charset=utf-8\r\n";
 
 // Notify Bernard.
@@ -169,16 +197,18 @@ $headers = 'From: TAXI Bernard <' . $c['mail_from'] . ">\r\n" .
     $headers
 );
 
-// Acknowledge the customer. No advance payment is required, so this simply
-// confirms receipt, matching Bernard's actual booking terms.
-$custHeaders = 'From: TAXI Bernard <' . $c['mail_from'] . ">\r\n" .
-               'Reply-To: ' . $c['admin_email'] . "\r\n" .
-               "Content-Type: text/plain; charset=utf-8\r\n";
-@mail(
-    $email,
-    'Your TAXI Bernard booking request (#' . $id . ')',
-    "Hi {$name},\n\nThank you for your booking request. I will confirm it directly by phone, WhatsApp or email shortly, usually within a few hours. No advance payment is needed, payment is due to me on the day, cash or card.\n\nYour request:\n\n{$summary}\n\nIf anything is wrong, just reply to this email or call/WhatsApp +385 97 753 9328.\n\nBernard\nTAXI Bernard, Vodice",
-    $custHeaders
-);
+// Acknowledge the customer by whichever channel they can actually receive:
+// only send the confirmation email if they gave one.
+if ($email !== '') {
+    $custHeaders = 'From: TAXI Bernard <' . $c['mail_from'] . ">\r\n" .
+                   'Reply-To: ' . $c['admin_email'] . "\r\n" .
+                   "Content-Type: text/plain; charset=utf-8\r\n";
+    @mail(
+        $email,
+        'Your TAXI Bernard booking request (#' . $id . ')',
+        "Hi {$name},\n\nThank you for your booking request. I have received it and will email you soon to confirm availability and send instructions for the advance payment that fully confirms your reservation.\n\nYour request:\n\n{$summary}\n\nIf anything is wrong, just reply to this email or call/WhatsApp +385 97 753 9328.\n\nBernard\nTAXI Bernard, Vodice",
+        $custHeaders
+    );
+}
 
 echo json_encode(['success' => true, 'id' => $id]);

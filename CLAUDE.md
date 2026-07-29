@@ -61,11 +61,25 @@ replace CabGrid and WordPress entirely once this is live.
 
 ## Bernard-specific rules (do NOT copy Antonio's terms here)
 
-- **No advance payment or deposit.** Unlike Antonio's 20% advance policy,
-  Bernard's actual Terms & Conditions require no advance payment at all;
-  full payment (cash or card) is due to the driver on the day. Keep booking
-  confirmation emails and copy consistent with this, never mention a
-  deposit for Bernard.
+- **Advance payment required, same as Antonio's system (changed 2026-07-29,
+  by Bernard's own request — "same amounts same everything").** A booking
+  is only confirmed once the deposit or full fare is paid: 20% deposit
+  (minimum €20) for transfers over €20, full advance payment for €20 and
+  under. Balance due to the driver on the day, cash or card. Refunds: full
+  (bank transfer) or full minus €10 (card) more than 72h before pickup, no
+  refund at 72h or under or on a no-show. Ported wholesale from
+  taxisibenik.hr's booking form (contact_method + payment_option + invoice
+  checkbox + consent checkbox), booking-submit.php validation, schema
+  (`contact_method`, `payment_option`, `invoice_required` columns,
+  `customer_email` now nullable since WhatsApp-only bookers may skip it),
+  and Terms & Conditions §3/§4/§5. Payment collection itself is manual on
+  Antonio's site too (no Stripe/PayPal anywhere) — Bernard follows up by
+  email with bank transfer/card instructions after the booking request
+  arrives, then flips the `payment` field in the admin once it's received.
+  If Bernard ever reverts to no-deposit, undo this across: book/en/,
+  terms-and-conditions/en/, script.js booking-page block,
+  booking-submit.php, schema.sql, manage-b7k39x/{index,booking}.php,
+  llms.txt, and the two meta.json files that mention payment.
 - Fixed prices cover up to 4 passengers; a small additional fee applies for
   5-6 (contact Bernard for the exact amount, not published as a fixed
   number anywhere on the original site).
