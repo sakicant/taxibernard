@@ -47,39 +47,58 @@ document.querySelectorAll('.nav-dropdown-toggle').forEach((toggle) => {
 });
 
 // ---------------------------------------------------------------------------
-// Quote widget. All fixed prices are anchored at Vodice (Bernard's base), per
-// the routes listed on the airport-transfers and intercity-transfers pages.
+// Canonical fixed prices, anchored at Vodice (Bernard's base). Shared by the
+// quote widget below and the booking page's price display further down, so
+// there's one source of truth for what a route "should" cost on the client
+// side. The server has its own independent copy (prices.php) and never
+// trusts whatever price a request claims, exactly because this file (and
+// the URL params it reads) are fully client-controlled and editable by
+// anyone, this constant is for display/UX only, not a security boundary.
+// Keep both copies in sync when a price changes.
+const PRICES = {
+  Vodice: {
+    'Šibenik': 30,
+    'Split': 155,
+    'Zadar': 100,
+    'Murter': 50,
+    'Skradin': 70,
+    'Zagreb': 490,
+    'Dubrovnik': 490,
+    'Makarska': 210,
+    'Tisno': 30,
+    'Jezera': 40,
+    'Pirovac': 30,
+    'Betina': 50,
+    'Srima': 15,
+    'Tribunj': 15,
+    'Lozovac': 60,
+    'Primošten': 70,
+    'Čista Velika': 40,
+    'Gaćelezi': 25,
+    'Stankovci': 45,
+    'Split Airport (SPU)': 115,
+    'Zadar Airport (ZAD)': 100,
+    'Zagreb Airport (ZAG)': 480,
+    'Dubrovnik Airport (DBV)': 480
+  }
+};
+
+// Price for one direction; prefers the exact directional value and falls back
+// to the reverse direction when only one is listed. Returns null if the pair
+// has no fixed price (custom quote).
+function priceOneWay(from, to) {
+  const f = PRICES[from];
+  if (f && f[to] != null) return f[to];
+  const r = PRICES[to];
+  if (r && r[from] != null) return r[from];
+  return null;
+}
+
+// ---------------------------------------------------------------------------
+// Quote widget.
 // ---------------------------------------------------------------------------
 const quoteWidget = document.getElementById('quote-widget');
 if (quoteWidget) {
-  const PRICES = {
-    Vodice: {
-      'Šibenik': 30,
-      'Split': 155,
-      'Zadar': 100,
-      'Murter': 50,
-      'Skradin': 70,
-      'Zagreb': 490,
-      'Dubrovnik': 490,
-      'Makarska': 210,
-      'Tisno': 30,
-      'Jezera': 40,
-      'Pirovac': 30,
-      'Betina': 50,
-      'Srima': 15,
-      'Tribunj': 15,
-      'Lozovac': 60,
-      'Primošten': 70,
-      'Čista Velika': 40,
-      'Gaćelezi': 25,
-      'Stankovci': 45,
-      'Split Airport (SPU)': 115,
-      'Zadar Airport (ZAD)': 100,
-      'Zagreb Airport (ZAG)': 480,
-      'Dubrovnik Airport (DBV)': 480
-    }
-  };
-
   // Towns close enough to Vodice to be a meter-rate "local" ride rather than
   // a fixed-price trip. Srima and Tribunj now also have a real Vodice fixed
   // price (see PRICES above), they just stay grouped here per Bernard, same
@@ -214,17 +233,6 @@ if (quoteWidget) {
   const fromSelect = document.getElementById('quote-from');
   const toSelect = document.getElementById('quote-to');
 
-  // Price for one direction; prefers the exact directional value and falls back
-  // to the reverse direction when only one is listed. Returns null if the pair
-  // has no fixed price (custom quote).
-  function priceOneWay(from, to) {
-    const f = PRICES[from];
-    if (f && f[to] != null) return f[to];
-    const r = PRICES[to];
-    if (r && r[from] != null) return r[from];
-    return null;
-  }
-
   const tripToggleBtns = document.querySelectorAll('.trip-toggle-btn');
   let tripType = 'oneway';
   tripToggleBtns.forEach((btn) => {
@@ -335,17 +343,37 @@ if (bookingPageForm) {
   const tripEl = document.getElementById('book-trip');
   const paxEl = document.getElementById('book-pax');
   const lugEl = document.getElementById('book-lug');
-  const priceParam = params.get('price') || '';
+  const fromVal = params.get('from') || '';
+  const toVal = params.get('to') || '';
 
-  if (params.get('from')) fromEl.value = params.get('from');
-  if (params.get('to')) toEl.value = params.get('to');
+  if (fromVal) fromEl.value = fromVal;
+  if (toVal) toEl.value = toVal;
   if (params.get('trip') === 'return') tripEl.value = 'return';
   if (params.get('pax')) paxEl.value = params.get('pax');
   if (params.get('lug')) lugEl.value = params.get('lug');
 
+  // Recompute the price ourselves from the route instead of trusting the
+  // URL's price param: it's plain editable text, ?price=1 works exactly
+  // like ?price=115 as far as the browser's concerned. This keeps the
+  // on-screen summary honest even off a hand-edited link, and
+  // booking-submit.php independently re-checks the same way server-side
+  // before anything reaches Bernard, so a tampered link can't get a fake
+  // price past either the display or the actual booking.
+  const rawPriceParam = params.get('price') || '';
+  let priceParam = rawPriceParam;
   let priceText = '';
-  if (priceParam === 'meter') priceText = 'Taxi meter (start €3, then €4/km)';
-  else if (priceParam && priceParam !== 'custom') priceText = '€' + priceParam;
+  if (rawPriceParam === 'meter') {
+    priceText = 'Taxi meter (start €3, then €4/km)';
+  } else {
+    const oneway = priceOneWay(fromVal, toVal);
+    if (oneway != null) {
+      const total = tripEl.value === 'return' ? oneway + priceOneWay(toVal, fromVal) : oneway;
+      priceParam = String(total);
+      priceText = '€' + total;
+    } else {
+      priceParam = 'custom';
+    }
+  }
   if (priceText) {
     document.getElementById('sum-price').textContent = priceText;
     document.getElementById('booking-price-line').hidden = false;

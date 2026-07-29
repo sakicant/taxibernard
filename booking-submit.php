@@ -66,6 +66,33 @@ if ($errors) {
     exit;
 }
 
+// The submitted price arrives as a plain URL/form field, anyone can edit
+// ?price=115 down to ?price=1 by hand before hitting submit. Never trust it:
+// look up what this exact route actually costs and use that instead. Only
+// a numeric price makes a monetary claim worth checking, 'meter' and
+// 'custom' (or anything else non-numeric) carry no number to fake and pass
+// through as-is.
+function official_price($from, $to)
+{
+    static $prices = null;
+    if ($prices === null) {
+        $prices = require __DIR__ . '/prices.php';
+    }
+    $from = trim($from);
+    $to = trim($to);
+    if (strcasecmp($from, 'Vodice') === 0 && isset($prices[$to])) return $prices[$to];
+    if (strcasecmp($to, 'Vodice') === 0 && isset($prices[$from])) return $prices[$from];
+    return null;
+}
+
+if (ctype_digit($price)) {
+    $official = official_price($pickup, $dropoff);
+    $expected = $official !== null ? ($trip === 'return' ? $official * 2 : $official) : null;
+    if ($expected === null || (int) $price !== $expected) {
+        $price = $expected !== null ? (string) $expected : 'custom';
+    }
+}
+
 // Bernard's Renault Espace seats up to 6 passengers plus the driver.
 $passengers = max(1, min(6, $passengers));
 $luggage    = max(0, min(9, $luggage));

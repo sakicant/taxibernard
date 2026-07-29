@@ -34,9 +34,17 @@ replace CabGrid and WordPress entirely once this is live.
   `LANGUAGES` in `build.py` to add languages; follow the taxiskradin.hr
   pattern (`src/partials/<name>.<lang>.html` overrides, per-page `<lang>`
   folders).
-- `PRICES` in `script.js` is the source of truth for the quote widget's
-  fixed fares, all anchored at Vodice (every route is Vodice-to-X).
-  `booking-submit.php`'s passenger cap is 6 (not 4), matching the Espace.
+- `PRICES` in `script.js` is the source of truth for the quote widget's and
+  booking page's *displayed* fixed fares, all anchored at Vodice (every
+  route is Vodice-to-X). `prices.php` is the independent server-side copy,
+  used only to re-validate a submitted booking's price in
+  `booking-submit.php` before it's stored/emailed, since the price arrives
+  as a plain editable URL/form field and must never be trusted on its own
+  (found and fixed 2026-07-29: `?price=1` on a booking link used to sail
+  straight through to Bernard's inbox unchecked). **Keep both files in sync
+  by hand when a price changes**, there's no build step wiring them
+  together. `booking-submit.php`'s passenger cap is 6 (not 4), matching the
+  Espace.
 - `build.py` computes an asset version hash for `styles.css` + `script.js`
   cache busting, and writes `sitemap.xml`.
 - Local preview: `.claude/launch.json` defines a static server on port 5510
