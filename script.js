@@ -57,15 +57,22 @@ if (quoteWidget) {
       'Šibenik': 30,
       'Split': 155,
       'Zadar': 100,
-      'Murter': 45,
+      'Murter': 50,
       'Skradin': 70,
       'Zagreb': 490,
       'Dubrovnik': 490,
       'Makarska': 210,
-      'Tisno': 50,
-      'Jezera': 55,
-      'Pirovac': 50,
+      'Tisno': 30,
+      'Jezera': 40,
+      'Pirovac': 30,
       'Betina': 70,
+      'Srima': 15,
+      'Tribunj': 15,
+      'Lozovac': 60,
+      'Primošten': 70,
+      'Čista Velika': 40,
+      'Gaćelezi': 25,
+      'Stankovci': 45,
       'Split Airport (SPU)': 115,
       'Zadar Airport (ZAD)': 100,
       'Zagreb Airport (ZAG)': 480,
@@ -74,15 +81,21 @@ if (quoteWidget) {
   };
 
   // Towns close enough to Vodice to be a meter-rate "local" ride rather than
-  // a fixed-price trip. Cross-pairs among these (e.g. Vodice to Tribunj)
-  // have no PRICES entry on purpose, Bernard quotes those directly, same as
-  // any other unlisted route (see priceOneWay's null fallback below).
+  // a fixed-price trip. Srima and Tribunj now also have a real Vodice fixed
+  // price (see PRICES above), they just stay grouped here per Bernard, same
+  // idea as before: picking the same town twice still shows the meter
+  // message, and any other cross-pair among these (e.g. Srima to Tribunj)
+  // that has no PRICES entry falls back to "Bernard quotes you directly".
   const LOCAL_ZONE = ['Vodice', 'Srima', 'Tribunj'];
 
   const GROUPS = [
     { label: 'Vodice (local rides)', items: LOCAL_ZONE },
-    { label: 'Fixed-price destinations', items: ['Šibenik', 'Split', 'Zadar', 'Murter', 'Skradin', 'Zagreb', 'Dubrovnik', 'Makarska', 'Tisno', 'Jezera', 'Pirovac', 'Betina'] },
-    { label: 'Airports', items: ['Split Airport (SPU)', 'Zadar Airport (ZAD)', 'Zagreb Airport (ZAG)', 'Dubrovnik Airport (DBV)'] }
+    { label: 'Airports', items: ['Split Airport (SPU)', 'Zadar Airport (ZAD)', 'Zagreb Airport (ZAG)', 'Dubrovnik Airport (DBV)'] },
+    { label: 'Fixed-price destinations', items: [
+      'Betina', 'Čista Velika', 'Dubrovnik', 'Gaćelezi', 'Jezera', 'Lozovac',
+      'Makarska', 'Murter', 'Pirovac', 'Primošten', 'Skradin', 'Split',
+      'Stankovci', 'Šibenik', 'Tisno', 'Zadar', 'Zagreb'
+    ] }
   ];
 
   // Diacritic-insensitive normalize so "sibenik" matches "Šibenik", etc.
@@ -267,7 +280,7 @@ if (quoteWidget) {
     if (from === to && LOCAL_ZONE.includes(from)) {
       const url = bookingUrl({ ...base, priceParam: 'meter' });
       quoteResult.innerHTML =
-        '<p>A local ride within ' + from + ' (and nearby Gaćelezi, Čista Velika and Čista Mala) is charged by the taxi meter: start &euro;3, then &euro;4/km. See the <a href="/#pricing">local rates</a>.</p>' +
+        '<p>A local ride within ' + from + ' (and nearby Čista Mala) is charged by the taxi meter: start &euro;3, then &euro;4/km. See the <a href="/#pricing">local rates</a>.</p>' +
         '<a class="btn btn-primary quote-btn" href="' + url + '">Book Now</a>';
       return;
     }
