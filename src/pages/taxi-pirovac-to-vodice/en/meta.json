@@ -1,0 +1,78 @@
+{
+  "slug": "taxi-pirovac-to-vodice",
+  "title": "Taxi Pirovac to Vodice | Fixed €30 Transfer | TAXI Bernard",
+  "description": "Private taxi and transfer from Pirovac to Vodice with Bernard. Fixed €30 per car, up to 4 passengers, door to door, no meter.",
+  "keywords": "taxi pirovac to vodice, transfer pirovac to vodice, pirovac to vodice taxi",
+  "og_image": "https://taxivodice.hr/assets/img/espace-vodice.webp",
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Private taxi transfer",
+      "name": "Taxi Pirovac to Vodice",
+      "description": "Private, fixed-price taxi transfer from Pirovac to Vodice, 30 euros per car for up to 4 passengers, door to door.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "TAXI Vodice Bernard",
+        "telephone": "+385977539328",
+        "email": "bernard.mikulic@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Udovičića Benjamina 3b",
+          "addressLocality": "Vodice",
+          "postalCode": "22211",
+          "addressCountry": "HR"
+        }
+      },
+      "areaServed": [
+        "Pirovac",
+        "Vodice"
+      ],
+      "url": "https://taxivodice.hr/taxi-pirovac-to-vodice/",
+      "offers": {
+        "@type": "Offer",
+        "price": "30",
+        "priceCurrency": "EUR",
+        "description": "One-way private transfer from Pirovac to Vodice, per car for up to 4 passengers. Return €60."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much is a taxi from Pirovac to Vodice?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A fixed €30 per car for up to 4 passengers, one way, luggage included. A return trip is €60."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the price per person or per vehicle?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The price is per vehicle, not per person. It covers up to 4 passengers and luggage at no extra cost, with a small additional fee for 5 or 6 passengers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where do you pick up?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "At your exact address in Pirovac, whether a home, hotel or apartment. Send the address when you book and Bernard will confirm the meeting point."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How far in advance should I book?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Advance booking is recommended to guarantee availability, especially during peak summer season. For a last-minute ride, call or WhatsApp Bernard directly."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -173,6 +173,8 @@ def page_priority(slug):
         return "0.9"
     if slug in ("privacy-policy", "terms-and-conditions"):
         return "0.3"
+    if "-to-" in slug:  # route pages, e.g. taxi-vodice-to-murter
+        return "0.6"
     return "0.8"
 
 
