@@ -17,14 +17,14 @@
         <label for="book-to">Drop-off location (to)</label>
         <input type="text" id="book-to" name="to" required placeholder="Split Airport (SPU), a town or address">
 
+        <div class="quote-field">
+          <label for="book-trip">Trip</label>
+          <select id="book-trip" name="trip">
+            <option value="oneway">One way</option>
+            <option value="return">Return</option>
+          </select>
+        </div>
         <div class="quote-field-row">
-          <div class="quote-field">
-            <label for="book-trip">Trip</label>
-            <select id="book-trip" name="trip">
-              <option value="oneway">One way</option>
-              <option value="return">Return</option>
-            </select>
-          </div>
           <div class="quote-field">
             <label for="book-pax">Passengers</label>
             <input type="number" id="book-pax" name="passengers" min="1" max="6" value="1" required>

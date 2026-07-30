@@ -190,6 +190,11 @@ a.topbar-item:hover { color: var(--yellow); }
 .combo-empty { padding: 12px; text-align: center; color: var(--gray-400); font-size: 0.86rem; }
 
 .quote-field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }
+/* .quote-field-row's own display:grid has the same specificity as the
+   browser's built-in [hidden]{display:none} rule, and author CSS always
+   wins that tie, so a hidden row (e.g. return date/time on a one-way trip)
+   was staying visible. This restores the native hidden behavior. */
+.quote-field-row[hidden] { display: none; }
 .quote-stepper label { display: block; font-size: 0.78rem; font-weight: 700; color: var(--gray-600); margin-bottom: 5px; }
 .stepper-control { display: flex; align-items: center; border: 1px solid var(--gray-200); border-radius: 6px; overflow: hidden; }
 .stepper-btn { flex: 0 0 auto; width: 36px; height: 40px; background: var(--gray-100); border: none; font-size: 1.1rem; font-weight: 700; color: var(--black); cursor: pointer; }
