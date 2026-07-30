@@ -1,6 +1,179 @@
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+// ---------------------------------------------------------------------------
+// Language. The page's <html lang> drives which strings and which internal
+// paths the scripted UI uses, so the quote widget and the booking/contact
+// forms speak the same language as the page they sit on. Translations live in
+// I18N keyed by the English string; t() falls back to English for anything
+// missing, so an untranslated key degrades to English rather than breaking.
+// ---------------------------------------------------------------------------
+const LANG = (document.documentElement.getAttribute('lang') || 'en').toLowerCase();
+
+// Path of the booking page and the home page in each language. The quote
+// widget links here, so a hardcoded /book/ would drop a Croatian visitor onto
+// the English form.
+const BOOK_PATH = {
+  en: '/book/', hr: '/hr/rezervacija/', de: '/de/buchen/', pl: '/pl/rezerwacja/',
+  cs: '/cs/rezervace/', it: '/it/prenota/', fr: '/fr/reserver/',
+  nl: '/nl/boeken/', hu: '/hu/foglalas/'
+};
+const HOME_PATH = {
+  en: '/', hr: '/hr/', de: '/de/', pl: '/pl/', cs: '/cs/',
+  it: '/it/', fr: '/fr/', nl: '/nl/', hu: '/hu/'
+};
+const bookPath = () => BOOK_PATH[LANG] || BOOK_PATH.en;
+const homePath = () => HOME_PATH[LANG] || HOME_PATH.en;
+
+const I18N = {
+  hr: {
+    'No matching location': 'Nema odgovarajuće lokacije',
+    'Please choose a pickup location and destination.': 'Odaberite mjesto polaska i odredište.',
+    'Book Now': 'Rezerviraj odmah',
+    'Request a Quote': 'Zatraži ponudu',
+    'one way': 'u jednom smjeru',
+    'return total': 'ukupno povratno',
+    '+ small fee for 5-6 passengers, confirmed with Bernard.': '+ mala doplata za 5-6 putnika, potvrđuje se s Bernardom.',
+    'local rates': 'lokalne cijene',
+    "A local ride within {from} (and nearby Čista Mala) is charged by the taxi meter: start &euro;3, then &euro;4/km. See the {link}.": "Lokalna vožnja u mjestu {from} (i obližnjoj Čistoj Maloj) naplaćuje se po taksimetru: start &euro;3, zatim &euro;4/km. Pogledajte {link}.",
+    "Bernard doesn't have a listed fixed price for {from} to {to} yet, but he'll quote you directly.": "Bernard još nema navedenu fiksnu cijenu za relaciju {from} - {to}, ali će vam ponudu dati izravno.",
+    'Sending...': 'Šaljemo...',
+    'Please fill in the pickup and drop-off, your name, preferred contact, payment choice, pickup date and time, and accept the Terms and Conditions.': 'Ispunite mjesto polaska i odredište, ime, željeni način kontakta, odabir plaćanja, datum i vrijeme preuzimanja te prihvatite Uvjete korištenja.',
+    'Please choose a pickup at least 2 hours from now. For a sooner ride, call or WhatsApp Bernard directly.': 'Odaberite preuzimanje najmanje 2 sata od sada. Za raniju vožnju nazovite Bernarda ili mu pišite na WhatsApp.',
+    'Thanks! Your booking request has been received. Bernard will email you soon to confirm availability and send instructions for the advance payment that fully confirms your reservation.': 'Hvala! Vaš zahtjev za rezervaciju je zaprimljen. Bernard će vam se uskoro javiti e-poštom kako bi potvrdio dostupnost i poslao upute za predujam kojim se rezervacija u potpunosti potvrđuje.',
+    'Thanks! Your message has been sent. Bernard will get back to you shortly.': 'Hvala! Vaša poruka je poslana. Bernard će vam se javiti u najkraćem roku.',
+    'Something went wrong. Please call or WhatsApp Bernard instead.': 'Nešto je pošlo po zlu. Nazovite Bernarda ili mu pišite na WhatsApp.'
+  },
+  de: {
+    'No matching location': 'Kein passender Ort',
+    'Please choose a pickup location and destination.': 'Bitte wählen Sie Abholort und Zielort.',
+    'Book Now': 'Jetzt buchen',
+    'Request a Quote': 'Angebot anfragen',
+    'one way': 'einfache Fahrt',
+    'return total': 'Gesamtpreis Hin- und Rückfahrt',
+    '+ small fee for 5-6 passengers, confirmed with Bernard.': '+ kleiner Aufpreis für 5-6 Personen, mit Bernard abgestimmt.',
+    'local rates': 'lokale Tarife',
+    "A local ride within {from} (and nearby Čista Mala) is charged by the taxi meter: start &euro;3, then &euro;4/km. See the {link}.": "Eine lokale Fahrt innerhalb von {from} (und dem nahen Čista Mala) wird nach Taxameter berechnet: Grundpreis &euro;3, dann &euro;4/km. Siehe {link}.",
+    "Bernard doesn't have a listed fixed price for {from} to {to} yet, but he'll quote you directly.": "Für {from} nach {to} hat Bernard noch keinen festen Preis hinterlegt, er nennt Ihnen aber direkt ein Angebot.",
+    'Sending...': 'Wird gesendet...',
+    'Please fill in the pickup and drop-off, your name, preferred contact, payment choice, pickup date and time, and accept the Terms and Conditions.': 'Bitte füllen Sie Abhol- und Zielort, Ihren Namen, den bevorzugten Kontaktweg, die Zahlungsart sowie Datum und Uhrzeit der Abholung aus und akzeptieren Sie die AGB.',
+    'Please choose a pickup at least 2 hours from now. For a sooner ride, call or WhatsApp Bernard directly.': 'Bitte wählen Sie eine Abholung frühestens in 2 Stunden. Für eine frühere Fahrt rufen Sie Bernard an oder schreiben Sie ihm per WhatsApp.',
+    'Thanks! Your booking request has been received. Bernard will email you soon to confirm availability and send instructions for the advance payment that fully confirms your reservation.': 'Danke! Ihre Buchungsanfrage ist eingegangen. Bernard meldet sich in Kürze per E-Mail, um die Verfügbarkeit zu bestätigen und Ihnen die Hinweise zur Anzahlung zu senden, mit der Ihre Reservierung endgültig bestätigt wird.',
+    'Thanks! Your message has been sent. Bernard will get back to you shortly.': 'Danke! Ihre Nachricht wurde gesendet. Bernard meldet sich in Kürze bei Ihnen.',
+    'Something went wrong. Please call or WhatsApp Bernard instead.': 'Etwas ist schiefgelaufen. Bitte rufen Sie Bernard an oder schreiben Sie ihm per WhatsApp.'
+  },
+  pl: {
+    'No matching location': 'Brak pasującej lokalizacji',
+    'Please choose a pickup location and destination.': 'Wybierz miejsce odbioru i cel podróży.',
+    'Book Now': 'Zarezerwuj teraz',
+    'Request a Quote': 'Poproś o wycenę',
+    'one way': 'w jedną stronę',
+    'return total': 'łącznie w obie strony',
+    '+ small fee for 5-6 passengers, confirmed with Bernard.': '+ niewielka dopłata za 5-6 pasażerów, potwierdzana z Bernardem.',
+    'local rates': 'stawki lokalne',
+    "A local ride within {from} (and nearby Čista Mala) is charged by the taxi meter: start &euro;3, then &euro;4/km. See the {link}.": "Lokalny przejazd w obrębie {from} (oraz pobliskiej Čista Mala) rozliczany jest według taksometru: start &euro;3, następnie &euro;4/km. Zobacz {link}.",
+    "Bernard doesn't have a listed fixed price for {from} to {to} yet, but he'll quote you directly.": "Bernard nie ma jeszcze podanej stałej ceny na trasie {from} - {to}, ale poda wycenę bezpośrednio.",
+    'Sending...': 'Wysyłanie...',
+    'Please fill in the pickup and drop-off, your name, preferred contact, payment choice, pickup date and time, and accept the Terms and Conditions.': 'Uzupełnij miejsce odbioru i cel podróży, imię i nazwisko, preferowany kontakt, wybór płatności, datę i godzinę odbioru oraz zaakceptuj Regulamin.',
+    'Please choose a pickup at least 2 hours from now. For a sooner ride, call or WhatsApp Bernard directly.': 'Wybierz odbiór za co najmniej 2 godziny. Aby pojechać wcześniej, zadzwoń do Bernarda lub napisz na WhatsApp.',
+    'Thanks! Your booking request has been received. Bernard will email you soon to confirm availability and send instructions for the advance payment that fully confirms your reservation.': 'Dziękujemy! Twoja prośba o rezerwację została przyjęta. Bernard wkrótce wyśle e-mail, aby potwierdzić dostępność i przekazać instrukcje dotyczące zaliczki, która ostatecznie potwierdza rezerwację.',
+    'Thanks! Your message has been sent. Bernard will get back to you shortly.': 'Dziękujemy! Twoja wiadomość została wysłana. Bernard odezwie się wkrótce.',
+    'Something went wrong. Please call or WhatsApp Bernard instead.': 'Coś poszło nie tak. Zadzwoń do Bernarda lub napisz na WhatsApp.'
+  },
+  cs: {
+    'No matching location': 'Žádná odpovídající lokalita',
+    'Please choose a pickup location and destination.': 'Vyberte místo vyzvednutí a cíl cesty.',
+    'Book Now': 'Rezervovat',
+    'Request a Quote': 'Vyžádat nabídku',
+    'one way': 'jednosměrná jízda',
+    'return total': 'celkem zpáteční',
+    '+ small fee for 5-6 passengers, confirmed with Bernard.': '+ malý příplatek za 5-6 cestujících, potvrzuje se s Bernardem.',
+    'local rates': 'místní ceny',
+    "A local ride within {from} (and nearby Čista Mala) is charged by the taxi meter: start &euro;3, then &euro;4/km. See the {link}.": "Místní jízda v rámci {from} (a blízké Čista Mala) se účtuje podle taxametru: nástup &euro;3, poté &euro;4/km. Viz {link}.",
+    "Bernard doesn't have a listed fixed price for {from} to {to} yet, but he'll quote you directly.": "Bernard zatím nemá uvedenou pevnou cenu pro trasu {from} - {to}, nabídku vám ale sdělí přímo.",
+    'Sending...': 'Odesílání...',
+    'Please fill in the pickup and drop-off, your name, preferred contact, payment choice, pickup date and time, and accept the Terms and Conditions.': 'Vyplňte místo vyzvednutí a cíl, jméno, preferovaný kontakt, způsob platby, datum a čas vyzvednutí a potvrďte Obchodní podmínky.',
+    'Please choose a pickup at least 2 hours from now. For a sooner ride, call or WhatsApp Bernard directly.': 'Zvolte vyzvednutí nejdříve za 2 hodiny. Pro dřívější jízdu zavolejte Bernardovi nebo mu napište na WhatsApp.',
+    'Thanks! Your booking request has been received. Bernard will email you soon to confirm availability and send instructions for the advance payment that fully confirms your reservation.': 'Děkujeme! Vaši žádost o rezervaci jsme přijali. Bernard vám brzy pošle e-mail, potvrdí dostupnost a zašle pokyny k zálohové platbě, která rezervaci definitivně potvrzuje.',
+    'Thanks! Your message has been sent. Bernard will get back to you shortly.': 'Děkujeme! Vaše zpráva byla odeslána. Bernard se vám brzy ozve.',
+    'Something went wrong. Please call or WhatsApp Bernard instead.': 'Něco se pokazilo. Zavolejte prosím Bernardovi nebo mu napište na WhatsApp.'
+  },
+  it: {
+    'No matching location': 'Nessuna località corrispondente',
+    'Please choose a pickup location and destination.': 'Scegli il luogo di partenza e la destinazione.',
+    'Book Now': 'Prenota ora',
+    'Request a Quote': 'Richiedi un preventivo',
+    'one way': 'solo andata',
+    'return total': 'totale andata e ritorno',
+    '+ small fee for 5-6 passengers, confirmed with Bernard.': '+ piccolo supplemento per 5-6 passeggeri, confermato con Bernard.',
+    'local rates': 'tariffe locali',
+    "A local ride within {from} (and nearby Čista Mala) is charged by the taxi meter: start &euro;3, then &euro;4/km. See the {link}.": "Una corsa locale all'interno di {from} (e nella vicina Čista Mala) viene calcolata con il tassametro: scatto &euro;3, poi &euro;4/km. Vedi {link}.",
+    "Bernard doesn't have a listed fixed price for {from} to {to} yet, but he'll quote you directly.": "Bernard non ha ancora un prezzo fisso indicato per {from} - {to}, ma ti darà un preventivo direttamente.",
+    'Sending...': 'Invio in corso...',
+    'Please fill in the pickup and drop-off, your name, preferred contact, payment choice, pickup date and time, and accept the Terms and Conditions.': 'Compila luogo di partenza e destinazione, nome, contatto preferito, scelta di pagamento, data e ora del ritiro e accetta i Termini e condizioni.',
+    'Please choose a pickup at least 2 hours from now. For a sooner ride, call or WhatsApp Bernard directly.': 'Scegli un ritiro almeno 2 ore da adesso. Per un viaggio prima, chiama Bernard o scrivigli su WhatsApp.',
+    'Thanks! Your booking request has been received. Bernard will email you soon to confirm availability and send instructions for the advance payment that fully confirms your reservation.': 'Grazie! La tua richiesta di prenotazione è stata ricevuta. Bernard ti scriverà presto per confermare la disponibilità e inviarti le istruzioni per l\'acconto che conferma definitivamente la prenotazione.',
+    'Thanks! Your message has been sent. Bernard will get back to you shortly.': 'Grazie! Il tuo messaggio è stato inviato. Bernard ti risponderà a breve.',
+    'Something went wrong. Please call or WhatsApp Bernard instead.': 'Qualcosa è andato storto. Chiama Bernard o scrivigli su WhatsApp.'
+  },
+  fr: {
+    'No matching location': 'Aucun lieu correspondant',
+    'Please choose a pickup location and destination.': 'Choisissez le lieu de prise en charge et la destination.',
+    'Book Now': 'Réserver',
+    'Request a Quote': 'Demander un devis',
+    'one way': 'aller simple',
+    'return total': 'total aller-retour',
+    '+ small fee for 5-6 passengers, confirmed with Bernard.': '+ petit supplément pour 5-6 passagers, confirmé avec Bernard.',
+    'local rates': 'tarifs locaux',
+    "A local ride within {from} (and nearby Čista Mala) is charged by the taxi meter: start &euro;3, then &euro;4/km. See the {link}.": "Un trajet local dans {from} (et la commune voisine de Čista Mala) est facturé au compteur : prise en charge &euro;3, puis &euro;4/km. Voir les {link}.",
+    "Bernard doesn't have a listed fixed price for {from} to {to} yet, but he'll quote you directly.": "Bernard n'a pas encore de prix fixe indiqué pour {from} - {to}, mais il vous fera une offre directement.",
+    'Sending...': 'Envoi en cours...',
+    'Please fill in the pickup and drop-off, your name, preferred contact, payment choice, pickup date and time, and accept the Terms and Conditions.': 'Renseignez le lieu de prise en charge et la destination, votre nom, le contact souhaité, le mode de paiement, la date et l\'heure de prise en charge, et acceptez les Conditions générales.',
+    'Please choose a pickup at least 2 hours from now. For a sooner ride, call or WhatsApp Bernard directly.': 'Choisissez une prise en charge dans au moins 2 heures. Pour un trajet plus tôt, appelez Bernard ou écrivez-lui sur WhatsApp.',
+    'Thanks! Your booking request has been received. Bernard will email you soon to confirm availability and send instructions for the advance payment that fully confirms your reservation.': 'Merci ! Votre demande de réservation a bien été reçue. Bernard vous écrira prochainement pour confirmer la disponibilité et vous envoyer les instructions pour l\'acompte qui confirme définitivement votre réservation.',
+    'Thanks! Your message has been sent. Bernard will get back to you shortly.': 'Merci ! Votre message a été envoyé. Bernard vous répondra très vite.',
+    'Something went wrong. Please call or WhatsApp Bernard instead.': 'Une erreur est survenue. Appelez Bernard ou écrivez-lui sur WhatsApp.'
+  },
+  nl: {
+    'No matching location': 'Geen overeenkomende locatie',
+    'Please choose a pickup location and destination.': 'Kies een ophaallocatie en bestemming.',
+    'Book Now': 'Nu boeken',
+    'Request a Quote': 'Offerte aanvragen',
+    'one way': 'enkele reis',
+    'return total': 'totaal retour',
+    '+ small fee for 5-6 passengers, confirmed with Bernard.': '+ kleine toeslag voor 5-6 passagiers, af te stemmen met Bernard.',
+    'local rates': 'lokale tarieven',
+    "A local ride within {from} (and nearby Čista Mala) is charged by the taxi meter: start &euro;3, then &euro;4/km. See the {link}.": "Een lokale rit binnen {from} (en het nabijgelegen Čista Mala) wordt op de taximeter afgerekend: start &euro;3, daarna &euro;4/km. Zie de {link}.",
+    "Bernard doesn't have a listed fixed price for {from} to {to} yet, but he'll quote you directly.": "Bernard heeft nog geen vaste prijs vermeld voor {from} - {to}, maar hij geeft u rechtstreeks een offerte.",
+    'Sending...': 'Versturen...',
+    'Please fill in the pickup and drop-off, your name, preferred contact, payment choice, pickup date and time, and accept the Terms and Conditions.': 'Vul de ophaallocatie en bestemming, uw naam, gewenst contact, betaalkeuze, datum en tijd van ophalen in en accepteer de Algemene voorwaarden.',
+    'Please choose a pickup at least 2 hours from now. For a sooner ride, call or WhatsApp Bernard directly.': 'Kies een ophaaltijd van minimaal 2 uur vanaf nu. Voor een eerdere rit belt u Bernard of stuurt u hem een WhatsApp.',
+    'Thanks! Your booking request has been received. Bernard will email you soon to confirm availability and send instructions for the advance payment that fully confirms your reservation.': 'Bedankt! Uw boekingsaanvraag is ontvangen. Bernard mailt u binnenkort om de beschikbaarheid te bevestigen en stuurt instructies voor de aanbetaling waarmee uw reservering definitief wordt.',
+    'Thanks! Your message has been sent. Bernard will get back to you shortly.': 'Bedankt! Uw bericht is verzonden. Bernard neemt spoedig contact met u op.',
+    'Something went wrong. Please call or WhatsApp Bernard instead.': 'Er is iets misgegaan. Bel Bernard of stuur hem een WhatsApp.'
+  },
+  hu: {
+    'No matching location': 'Nincs találat',
+    'Please choose a pickup location and destination.': 'Válasszon felvételi helyet és úti célt.',
+    'Book Now': 'Foglalás',
+    'Request a Quote': 'Ajánlatkérés',
+    'one way': 'egy útra',
+    'return total': 'oda-vissza összesen',
+    '+ small fee for 5-6 passengers, confirmed with Bernard.': '+ kis felár 5-6 utas esetén, Bernarddal egyeztetve.',
+    'local rates': 'helyi tarifák',
+    "A local ride within {from} (and nearby Čista Mala) is charged by the taxi meter: start &euro;3, then &euro;4/km. See the {link}.": "A {from} területén belüli helyi fuvar taxióra szerint történik: alapdíj &euro;3, majd &euro;4/km. Lásd: {link}.",
+    "Bernard doesn't have a listed fixed price for {from} to {to} yet, but he'll quote you directly.": "Bernardnak még nincs megadott fix ára a(z) {from} - {to} útvonalra, de közvetlenül ad ajánlatot.",
+    'Sending...': 'Küldés...',
+    'Please fill in the pickup and drop-off, your name, preferred contact, payment choice, pickup date and time, and accept the Terms and Conditions.': 'Adja meg a felvételi helyet és az úti célt, a nevét, a kívánt kapcsolatfelvételi módot, a fizetési választást, a felvétel dátumát és időpontját, majd fogadja el az Általános szerződési feltételeket.',
+    'Please choose a pickup at least 2 hours from now. For a sooner ride, call or WhatsApp Bernard directly.': 'Válasszon legalább 2 órával későbbi felvételi időpontot. Korábbi útért hívja Bernardot vagy írjon neki WhatsAppon.',
+    'Thanks! Your booking request has been received. Bernard will email you soon to confirm availability and send instructions for the advance payment that fully confirms your reservation.': 'Köszönjük! Foglalási kérését megkaptuk. Bernard hamarosan e-mailben jelentkezik, visszaigazolja a szabad időpontot, és elküldi az előleg utalásához szükséges tudnivalókat, amellyel a foglalás véglegessé válik.',
+    'Thanks! Your message has been sent. Bernard will get back to you shortly.': 'Köszönjük! Üzenetét elküldtük. Bernard hamarosan válaszol.',
+    'Something went wrong. Please call or WhatsApp Bernard instead.': 'Valami hiba történt. Hívja Bernardot vagy írjon neki WhatsAppon.'
+  }
+};
+
+const t = (s) => (I18N[LANG] && I18N[LANG][s]) || s;
+
 // The Trustindex widget scripts scan the page for contact info and clone the
 // topbar's mailto link as a stray, invisible tracking element right after
 // .topbar. It has no visible content of its own, but its presence still
@@ -163,7 +336,7 @@ if (quoteWidget) {
     });
     const empty = document.createElement('div');
     empty.className = 'combo-empty';
-    empty.textContent = 'No matching location';
+    empty.textContent = t('No matching location');
     empty.hidden = true;
     panel.appendChild(empty);
 
@@ -263,7 +436,7 @@ if (quoteWidget) {
     params.set('pax', q.passengers);
     params.set('lug', q.luggage);
     params.set('price', q.priceParam);
-    return '/book/?' + params.toString();
+    return bookPath() + '?' + params.toString();
   }
 
   const quoteResult = document.getElementById('quote-result');
@@ -275,7 +448,7 @@ if (quoteWidget) {
     quoteResult.hidden = false;
 
     if (!from || !to) {
-      quoteResult.innerHTML = '<p>Please choose a pickup location and destination.</p>';
+      quoteResult.innerHTML = '<p>' + t('Please choose a pickup location and destination.') + '</p>';
       return;
     }
 
@@ -283,13 +456,13 @@ if (quoteWidget) {
     const luggage = document.getElementById('quote-luggage').dataset.value;
     const base = { from, to, tripType, passengers, luggage };
     const pax = parseInt(passengers, 10);
-    const feeNote = pax >= 5 ? ' <span class="quote-price-note">+ small fee for 5-6 passengers, confirmed with Bernard.</span>' : '';
+    const feeNote = pax >= 5 ? ' <span class="quote-price-note">' + t('+ small fee for 5-6 passengers, confirmed with Bernard.') + '</span>' : '';
 
     if (from === to && LOCAL_ZONE.includes(from)) {
       const url = bookingUrl({ ...base, priceParam: 'meter' });
       quoteResult.innerHTML =
-        '<p>A local ride within ' + from + ' (and nearby Čista Mala) is charged by the taxi meter: start &euro;3, then &euro;4/km. See the <a href="/#pricing">local rates</a>.</p>' +
-        '<a class="btn btn-primary quote-btn" href="' + url + '">Book Now</a>';
+        '<p>' + t('A local ride within {from} (and nearby Čista Mala) is charged by the taxi meter: start &euro;3, then &euro;4/km. See the {link}.').replace('{from}', from).replace('{link}', '<a href="' + homePath() + '#pricing">' + t('local rates') + '</a>') + '</p>' +
+        '<a class="btn btn-primary quote-btn" href="' + url + '">' + t('Book Now') + '</a>';
       return;
     }
 
@@ -298,20 +471,20 @@ if (quoteWidget) {
       let total, sub;
       if (tripType === 'return') {
         total = oneway + priceOneWay(to, from);
-        sub = 'return total';
+        sub = t('return total');
       } else {
         total = oneway;
-        sub = 'one way';
+        sub = t('one way');
       }
       const url = bookingUrl({ ...base, priceParam: String(total) });
       quoteResult.innerHTML =
         '<div class="quote-price">&euro;' + total + ' <span class="quote-price-sub">' + sub + '</span>' + feeNote + '</div>' +
-        '<a class="btn btn-primary quote-btn" href="' + url + '">Book Now</a>';
+        '<a class="btn btn-primary quote-btn" href="' + url + '">' + t('Book Now') + '</a>';
     } else {
       const url = bookingUrl({ ...base, priceParam: 'custom' });
       quoteResult.innerHTML =
-        '<p>Bernard doesn\'t have a listed fixed price for ' + from + ' to ' + to + ' yet, but he\'ll quote you directly.</p>' +
-        '<a class="btn btn-primary quote-btn" href="' + url + '">Request a Quote</a>';
+        '<p>' + t('Bernard doesn\'t have a listed fixed price for {from} to {to} yet, but he\'ll quote you directly.').replace('{from}', from).replace('{to}', to) + '</p>' +
+        '<a class="btn btn-primary quote-btn" href="' + url + '">' + t('Request a Quote') + '</a>';
     }
   });
 
@@ -431,17 +604,17 @@ if (bookingPageForm) {
     const contactOk = contactMethodEl && (contactMethodEl.value === 'email' ? email : phone);
 
     if (!from || !to || !name || !date || !time || !contactOk || !paymentOptionEl || !consentEl.checked) {
-      bookingPageNote.textContent = 'Please fill in the pickup and drop-off, your name, preferred contact, payment choice, pickup date and time, and accept the Terms and Conditions.';
+      bookingPageNote.textContent = t('Please fill in the pickup and drop-off, your name, preferred contact, payment choice, pickup date and time, and accept the Terms and Conditions.');
       return;
     }
 
     const pickupAt = new Date(date + 'T' + time);
     if (isNaN(pickupAt.getTime()) || pickupAt.getTime() - Date.now() < MIN_NOTICE_MS) {
-      bookingPageNote.textContent = 'Please choose a pickup at least 2 hours from now. For a sooner ride, call or WhatsApp Bernard directly.';
+      bookingPageNote.textContent = t('Please choose a pickup at least 2 hours from now. For a sooner ride, call or WhatsApp Bernard directly.');
       return;
     }
 
-    bookingPageNote.textContent = 'Sending...';
+    bookingPageNote.textContent = t('Sending...');
 
     try {
       const body = new FormData();
@@ -475,14 +648,14 @@ if (bookingPageForm) {
       const data = await response.json().catch(() => null);
 
       if (response.ok && data && data.success) {
-        bookingPageNote.textContent = 'Thanks! Your booking request has been received. Bernard will email you soon to confirm availability and send instructions for the advance payment that fully confirms your reservation.';
+        bookingPageNote.textContent = t('Thanks! Your booking request has been received. Bernard will email you soon to confirm availability and send instructions for the advance payment that fully confirms your reservation.');
         bookingPageForm.reset();
         applyContactPref();
       } else {
-        bookingPageNote.textContent = (data && data.error) || 'Something went wrong. Please call or WhatsApp Bernard instead.';
+        bookingPageNote.textContent = (data && data.error) || t('Something went wrong. Please call or WhatsApp Bernard instead.');
       }
     } catch (err) {
-      bookingPageNote.textContent = 'Something went wrong. Please call or WhatsApp Bernard instead.';
+      bookingPageNote.textContent = t('Something went wrong. Please call or WhatsApp Bernard instead.');
     }
   });
 }
@@ -496,7 +669,7 @@ const contactNote = document.getElementById('form-note');
 if (contactForm && contactNote) {
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    contactNote.textContent = 'Sending...';
+    contactNote.textContent = t('Sending...');
 
     try {
       const response = await fetch(contactForm.action, {
@@ -508,13 +681,13 @@ if (contactForm && contactNote) {
       const data = await response.json().catch(() => null);
 
       if (response.ok && data && data.success) {
-        contactNote.textContent = 'Thanks! Your message has been sent. Bernard will get back to you shortly.';
+        contactNote.textContent = t('Thanks! Your message has been sent. Bernard will get back to you shortly.');
         contactForm.reset();
       } else {
-        contactNote.textContent = (data && data.error) || 'Something went wrong. Please call or WhatsApp Bernard instead.';
+        contactNote.textContent = (data && data.error) || t('Something went wrong. Please call or WhatsApp Bernard instead.');
       }
     } catch (err) {
-      contactNote.textContent = 'Something went wrong. Please call or WhatsApp Bernard instead.';
+      contactNote.textContent = t('Something went wrong. Please call or WhatsApp Bernard instead.');
     }
   });
 }

@@ -1,0 +1,84 @@
+# .htaccess for taxivodice.hr
+#
+# This file REPLACES the old WordPress .htaccess. That matters: WordPress's
+# rewrite block routes unknown paths to /index.php, which no longer exists
+# here. Uploading the new site without replacing .htaccess can leave the old
+# rules in place and break pages. Make sure this file lands in the web root.
+
+# Serve index.html, never a leftover index.php.
+DirectoryIndex index.html index.php
+
+# Prevent directory listing.
+Options -Indexes
+
+# ---------------------------------------------------------------------------
+# Caching for static assets (fast repeat visits). CSS/JS are versioned with
+# ?v=hash by build.py, so a long immutable cache is safe; HTML revalidates
+# hourly so content edits go live quickly.
+# ---------------------------------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp               "access plus 1 year"
+  ExpiresByType image/jpeg               "access plus 1 year"
+  ExpiresByType image/png                "access plus 1 year"
+  ExpiresByType image/svg+xml            "access plus 1 year"
+  ExpiresByType image/x-icon             "access plus 1 year"
+  ExpiresByType image/vnd.microsoft.icon "access plus 1 year"
+  ExpiresByType text/css                 "access plus 1 year"
+  ExpiresByType application/javascript   "access plus 1 year"
+  ExpiresByType font/woff2               "access plus 1 year"
+  ExpiresByType font/woff                "access plus 1 year"
+  ExpiresByType text/html                "access plus 1 hour"
+</IfModule>
+<IfModule mod_headers.c>
+  <FilesMatch "\.(webp|jpe?g|png|gif|svg|ico|css|js|woff2?|ttf|eot)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=3600, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Security headers.
+# ---------------------------------------------------------------------------
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+  # HSTS is only honoured over HTTPS, so it is safe to keep here; it activates
+  # once the SSL certificate is live.
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  # CSP: permissive on the third-party widgets this site actually uses
+  # (Trustindex reviews, Google Fonts) so nothing breaks, strict on the
+  # high-risk directives. If you add analytics later, add its host to
+  # script-src and connect-src or the script will be blocked.
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.trustindex.io https://*.trustindex.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.trustindex.io https://*.trustindex.io; font-src 'self' data: https://fonts.gstatic.com https://cdn.trustindex.io; img-src 'self' data: https:; connect-src 'self' https://cdn.trustindex.io https://*.trustindex.io; frame-src https://cdn.trustindex.io https://*.trustindex.io; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Force HTTPS (the second condition avoids a redirect loop behind a proxy
+  # or CDN that terminates SSL upstream).
+  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+  # No 301s from old WordPress URLs are defined yet. Once the site is live,
+  # check Search Console for 404s on old paths and add rules here in the form:
+  #   RewriteRule ^old-wordpress-slug/?$ /new-slug/ [R=301,L]
+</IfModule>
+
+# Never allow the browser to fetch credentials, raw config, the price table
+# or the SQL schema, even if PHP is ever misconfigured.
+<FilesMatch "^(config\.php|config\.sample\.php|db\.php|prices\.php|.*\.sql)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
