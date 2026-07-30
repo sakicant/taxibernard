@@ -1,0 +1,48 @@
+{
+  "slug": "mezimestske-transfery",
+  "title": "Transfery z Vodic | TAXI Bernard",
+  "description": "Transfery z Vodic do Šibeniku, Splitu, Zadaru, Skradinu, Záhřebu, Dubrovníku a Makarské za pevnou cenu. Žádný taxametr, žádná překvapení. Rezervujte přímo u Bernarda.",
+  "keywords": "transfery vodice, taxi vodice šibenik, taxi vodice split, taxi vodice zadar, taxi vodice skradin",
+  "og_image": "https://taxivodice.hr/assets/img/espace-6-seats.webp",
+  "schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Jak dlouho předem bych měl transfer z Vodic rezervovat?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Rezervace předem se doporučuje pro zajištění dostupnosti, zejména v hlavní letní sezóně. Rezervovat můžete přímo přes kontaktní stránku." }
+      },
+      {
+        "@type": "Question",
+        "name": "Je cena za osobu, nebo za vozidlo?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Cena je za vozidlo, ne za osobu. Zahrnuje až 4 cestující a zavazadla bez příplatku, s malým příplatkem za 5 nebo 6 cestujících." }
+      },
+      {
+        "@type": "Question",
+        "name": "Můžu si rezervovat jednosměrnou nebo zpáteční jízdu?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Obě možnosti jsou k dispozici. Stačí Bernardovi při rezervaci sdělit své plány a domluví si čas vyzvednutí, který vám vyhovuje." }
+      },
+      {
+        "@type": "Question",
+        "name": "Nabízíte vyzvednutí u hotelu nebo na adrese?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ano, Bernard vás vyzvedne přímo u vašeho hotelu, apartmánu nebo na jakékoli adrese ve Vodicích, není třeba se scházet na centrálním místě." }
+      },
+      {
+        "@type": "Question",
+        "name": "Můžu si po cestě udělat zastávku?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Krátké zastávky lze obvykle zajistit, stačí to zmínit při rezervaci, aby Bernard mohl podle toho naplánovat trasu a časování." }
+      },
+      {
+        "@type": "Question",
+        "name": "Co když můj cíl cesty není uvedený?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Žádný problém, kontaktujte Bernarda přímo přes kontaktní stránku se svým cílem cesty pro individuální cenovou nabídku." }
+      },
+      {
+        "@type": "Question",
+        "name": "Přijímáte platby kartou?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ano, platby kartou jsou přijímány." }
+      }
+    ]
+  }
+}

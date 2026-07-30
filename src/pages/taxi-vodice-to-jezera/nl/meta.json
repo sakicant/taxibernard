@@ -1,0 +1,86 @@
+{
+  "slug": "taxi-vodice-jezera",
+  "title": "Taxi Vodice naar Jezera | Vaste transfer van €40 | TAXI Bernard",
+  "description": "Privétaxi en transfer van Vodice naar Jezera met Bernard. Vaste prijs €40 per auto, tot 4 passagiers, van deur tot deur, geen meter.",
+  "keywords": "taxi vodice naar jezera, transfer vodice naar jezera, taxi vodice jezera",
+  "og_image": "https://taxivodice.hr/assets/img/espace-vodice.webp",
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Private taxi transfer",
+      "name": "Taxi Vodice naar Jezera",
+      "description": "Privé, vaste-prijs taxitransfer van Vodice naar Jezera, 40 euro per auto voor tot 4 passagiers, van deur tot deur.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "TAXI Vodice Bernard",
+        "telephone": "+385977539328",
+        "email": "bernard.mikulic@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Udovičića Benjamina 3b",
+          "addressLocality": "Vodice",
+          "postalCode": "22211",
+          "addressCountry": "HR"
+        }
+      },
+      "areaServed": [
+        "Vodice",
+        "Jezera"
+      ],
+      "url": "https://taxivodice.hr/nl/taxi-vodice-jezera/",
+      "offers": {
+        "@type": "Offer",
+        "price": "40",
+        "priceCurrency": "EUR",
+        "description": "Enkele reis, privétransfer van Vodice naar Jezera, per auto voor tot 4 passagiers. Retour €80."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Hoeveel kost een taxi van Vodice naar Jezera?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Een vaste prijs van €40 per auto voor tot 4 passagiers, enkele reis, bagage inbegrepen. Een retourrit is €80."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is de prijs per persoon of per voertuig?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "De prijs is per voertuig, niet per persoon. Dit dekt tot 4 passagiers en bagage zonder extra kosten, met een kleine toeslag voor 5 of 6 passagiers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Waar haalt u op?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Op uw exacte adres in Vodice, of dat nu een huis, hotel of appartement is. Stuur het adres door bij het boeken en Bernard bevestigt de ontmoetingsplek."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hoe ver van tevoren moet ik boeken?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vooraf boeken wordt aangeraden om beschikbaarheid te garanderen, vooral tijdens het hoogseizoen. Voor een last-minute rit belt of appt u Bernard rechtstreeks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kan Bernard meer dan 4 passagiers vervoeren?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, de Renault Espace van Bernard biedt plaats aan maximaal 6 passagiers. Voor 5 of 6 passagiers geldt een kleine toeslag, neem contact op met Bernard voor het exacte bedrag."
+          }
+        }
+      ]
+    }
+  ]
+}

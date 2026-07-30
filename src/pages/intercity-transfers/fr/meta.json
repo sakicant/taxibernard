@@ -1,0 +1,48 @@
+{
+  "slug": "transferts-entre-villes",
+  "title": "Transferts Vodice | TAXI Bernard",
+  "description": "Transferts à prix fixe depuis Vodice vers Šibenik, Split, Zadar, Skradin, Zagreb, Dubrovnik et Makarska. Pas de compteur, pas de surprise. Réservez directement avec Bernard.",
+  "keywords": "transferts vodice, taxi vodice sibenik, taxi vodice split, taxi vodice zadar, taxi vodice skradin",
+  "og_image": "https://taxivodice.hr/assets/img/espace-6-seats.webp",
+  "schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Combien de temps à l'avance dois-je réserver un transfert Vodice ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Il est recommandé de réserver à l'avance pour garantir la disponibilité, en particulier pendant la haute saison estivale. Vous pouvez réserver directement via la page de contact." }
+      },
+      {
+        "@type": "Question",
+        "name": "Le prix est-il par personne ou par véhicule ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Le prix est par véhicule, pas par personne. Il couvre jusqu'à 4 passagers et les bagages sans frais supplémentaires, avec un petit supplément pour 5 ou 6 passagers." }
+      },
+      {
+        "@type": "Question",
+        "name": "Puis-je réserver un aller simple ou un aller-retour ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Les deux options sont disponibles. Indiquez simplement vos plans à Bernard lors de la réservation, et il organisera l'heure de prise en charge qui vous convient." }
+      },
+      {
+        "@type": "Question",
+        "name": "Proposez-vous une prise en charge à l'hôtel ou à une adresse ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Oui, Bernard viendra vous chercher directement à votre hôtel, appartement ou toute autre adresse à Vodice, pas besoin de vous rendre à un point central." }
+      },
+      {
+        "@type": "Question",
+        "name": "Puis-je faire un arrêt en chemin ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "De courts arrêts peuvent généralement être organisés, il suffit de le mentionner lors de la réservation afin que Bernard puisse planifier l'itinéraire et le timing en conséquence." }
+      },
+      {
+        "@type": "Question",
+        "name": "Que faire si ma destination n'est pas listée ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Pas de problème, contactez Bernard directement via la page de contact avec votre destination pour un devis personnalisé." }
+      },
+      {
+        "@type": "Question",
+        "name": "Acceptez-vous les paiements par carte ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Oui, les paiements par carte sont acceptés." }
+      }
+    ]
+  }
+}

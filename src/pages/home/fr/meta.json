@@ -1,0 +1,82 @@
+{
+  "slug": "",
+  "title": "TAXI Vodice - Taxi Local et Transferts à Vodice | Taxi Bernard",
+  "description": "Besoin d'un taxi à Vodice ? Le taxi de Bernard propose des courses locales sûres et ponctuelles, ainsi que des transferts aéroport et interurbains à prix fixe. Réservez directement, sans centre d'appels.",
+  "keywords": "taxi vodice, taxi à vodice, taxi bernard, transfert aéroport vodice, transferts vodice",
+  "og_image": "https://taxivodice.hr/assets/og-image.jpg",
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "TAXI Vodice Bernard",
+      "legalName": "BHOPE, obrt za taxi prijevoz i usluge, vl. Bernard Mikulić",
+      "url": "https://taxivodice.hr/fr/",
+      "telephone": "+385977539328",
+      "email": "bernard.mikulic@gmail.com",
+      "areaServed": ["Vodice", "Tribunj", "Šibenik", "Skradin", "Split", "Zadar", "Zagreb", "Dubrovnik"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Udovičića Benjamina 3b",
+        "addressLocality": "Vodice",
+        "postalCode": "22211",
+        "addressCountry": "HR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.7639,
+        "longitude": 15.7772
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "88"
+      },
+      "priceRange": "€€",
+      "@id": "https://taxivodice.hr/#business",
+      "image": "https://taxivodice.hr/assets/og-image.jpg",
+      "paymentAccepted": "Cash, Credit Card",
+      "currenciesAccepted": "EUR"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Comment trouver un taxi à Vodice ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Vous pouvez réserver le service de taxi Vodice directement en appelant ou en écrivant à Bernard, sans application de réservation ni centre d'appels. Pour les transferts plus longs, comme les transferts aéroport, il est préférable de réserver à l'avance car Bernard n'est disponible à la demande que pendant les heures de travail. Lors d'une réservation à l'avance, merci d'indiquer votre numéro de vol ainsi que la date et l'heure d'arrivée afin que le vol puisse être suivi en conséquence. Vous pouvez le contacter via la page de contact." }
+        },
+        {
+          "@type": "Question",
+          "name": "Taxi Vodice propose-t-il des transferts aéroport ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Oui, taxi Vodice assure les transferts vers et depuis l'aéroport de Split et l'aéroport de Zadar, ainsi que vers d'autres aéroports régionaux sur demande. Les prix des transferts réservés à l'avance sont fixes et sont indiqués sur la page des transferts aéroport." }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien coûte un taxi à Vodice ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Les tarifs dépendent de l'itinéraire et de la distance parcourue. Les courses locales à Vodice sont tarifées différemment des trajets plus longs. Les courses locales plus courtes sont calculées selon le tarif standard du compteur, tandis que les transferts plus longs réservés à l'avance ont des prix fixes, indiqués sur la page des transferts aéroport." }
+        },
+        {
+          "@type": "Question",
+          "name": "Taxi Vodice dessert-il Šibenik ou d'autres villes voisines ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Oui, taxi Vodice couvre les liaisons interurbaines, notamment Šibenik, Skradin et d'autres destinations le long de la côte dalmate. Voir la page des transferts interurbains pour plus de détails." }
+        },
+        {
+          "@type": "Question",
+          "name": "Puis-je réserver taxi Vodice à l'avance ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Oui, il est recommandé de réserver à l'avance pour les transferts aéroport, les départs matinaux ou la haute saison estivale, bien que les courses locales de dernière minute soient également acceptées selon la disponibilité. Vous pouvez réserver directement via la page de contact." }
+        },
+        {
+          "@type": "Question",
+          "name": "Taxi Vodice est-il disponible pour des excursions au parc national de Krka ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Oui, des excursions d'une journée vers le parc national de Krka peuvent être organisées directement avec Bernard." }
+        },
+        {
+          "@type": "Question",
+          "name": "Taxi Vodice accepte-t-il les paiements par carte ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Oui, les paiements par carte sont acceptés." }
+        }
+      ]
+    }
+  ]
+}

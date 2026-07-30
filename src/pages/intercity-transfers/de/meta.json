@@ -1,0 +1,48 @@
+{
+  "slug": "staedtetransfers",
+  "title": "Vodice Transfers | TAXI Bernard",
+  "description": "Transfers ab Vodice zum Festpreis nach Šibenik, Split, Zadar, Skradin, Zagreb, Dubrovnik und Makarska. Kein Taxameter, keine Überraschungen. Direkt bei Bernard buchen.",
+  "keywords": "vodice transfers, taxi vodice sibenik, taxi vodice split, taxi vodice zadar, taxi vodice skradin",
+  "og_image": "https://taxivodice.hr/assets/img/espace-6-seats.webp",
+  "schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Wie weit im Voraus sollte ich einen Vodice-Transfer buchen?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Eine Buchung im Voraus wird empfohlen, um die Verfügbarkeit zu sichern, besonders in der Hochsaison im Sommer. Sie können direkt über die Kontaktseite buchen." }
+      },
+      {
+        "@type": "Question",
+        "name": "Gilt der Preis pro Person oder pro Fahrzeug?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Der Preis gilt pro Fahrzeug, nicht pro Person. Er deckt bis zu 4 Fahrgäste und Gepäck ohne Aufpreis ab, für 5 oder 6 Fahrgäste fällt eine kleine zusätzliche Gebühr an." }
+      },
+      {
+        "@type": "Question",
+        "name": "Kann ich eine einfache Fahrt oder eine Hin- und Rückfahrt buchen?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Beide Optionen sind verfügbar. Teilen Sie Bernard bei der Buchung einfach Ihre Pläne mit, und er organisiert die für Sie passende Abholzeit." }
+      },
+      {
+        "@type": "Question",
+        "name": "Bieten Sie Abholung am Hotel oder an einer Adresse an?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ja, Bernard holt Sie direkt von Ihrem Hotel, Apartment oder jeder beliebigen Adresse in Vodice ab, ein zentraler Treffpunkt ist nicht nötig." }
+      },
+      {
+        "@type": "Question",
+        "name": "Kann ich unterwegs einen Zwischenstopp einlegen?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Kurze Zwischenstopps lassen sich meist einrichten, erwähnen Sie es einfach bei der Buchung, damit Bernard Route und Zeitplan entsprechend planen kann." }
+      },
+      {
+        "@type": "Question",
+        "name": "Was, wenn mein Ziel nicht aufgeführt ist?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Kein Problem, kontaktieren Sie Bernard direkt über die Kontaktseite mit Ihrem Ziel für ein individuelles Preisangebot." }
+      },
+      {
+        "@type": "Question",
+        "name": "Akzeptieren Sie Kartenzahlungen?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ja, Kartenzahlungen werden akzeptiert." }
+      }
+    ]
+  }
+}

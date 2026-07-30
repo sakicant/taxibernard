@@ -1,0 +1,48 @@
+{
+  "slug": "medugradski-transferi",
+  "title": "Vodice transferi | TAXI Bernard",
+  "description": "Transferi po fiksnoj cijeni iz Vodica do Šibenika, Splita, Zadra, Skradina, Zagreba, Dubrovnika i Makarske. Bez taksimetra, bez iznenađenja. Rezervirajte izravno kod Bernarda.",
+  "keywords": "vodice transferi, taksi vodice šibenik, taksi vodice split, taksi vodice zadar, taksi vodice skradin",
+  "og_image": "https://taxivodice.hr/assets/img/espace-6-seats.webp",
+  "schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Koliko unaprijed trebam rezervirati transfer iz Vodica?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Preporučuje se rezervacija unaprijed kako bi se osigurala dostupnost, pogotovo tijekom vrhunca sezone. Rezervaciju možete izvršiti izravno putem stranice za kontakt." }
+      },
+      {
+        "@type": "Question",
+        "name": "Je li cijena po osobi ili po vozilu?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Cijena je po vozilu, ne po osobi. Uključuje do 4 putnika i prtljagu bez dodatne naplate, uz malu doplatu za 5 ili 6 putnika." }
+      },
+      {
+        "@type": "Question",
+        "name": "Mogu li rezervirati jednosmjernu ili povratnu vožnju?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Obje opcije su dostupne. Samo javite Bernardu svoje planove prilikom rezervacije, a on će dogovoriti vrijeme preuzimanja koje vam odgovara." }
+      },
+      {
+        "@type": "Question",
+        "name": "Nudite li preuzimanje s hotela ili adrese?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Da, Bernard će vas preuzeti izravno s vašeg hotela, apartmana ili bilo koje adrese u Vodicama, bez potrebe za susretom na središnjoj lokaciji." }
+      },
+      {
+        "@type": "Question",
+        "name": "Mogu li usput napraviti zaustavljanje?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Kraća zaustavljanja se obično mogu dogovoriti, samo to spomenite prilikom rezervacije kako bi Bernard mogao planirati rutu i vrijeme." }
+      },
+      {
+        "@type": "Question",
+        "name": "Što ako moje odredište nije navedeno?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Nema problema, kontaktirajte Bernarda izravno putem stranice za kontakt sa svojim odredištem za prilagođenu ponudu cijene." }
+      },
+      {
+        "@type": "Question",
+        "name": "Primate li plaćanje karticom?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Da, plaćanje karticom je prihvaćeno." }
+      }
+    ]
+  }
+}

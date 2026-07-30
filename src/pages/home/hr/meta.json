@@ -1,0 +1,82 @@
+{
+  "slug": "",
+  "title": "TAXI Vodice - Lokalni taksi i transferi u Vodicama | Taxi Bernard",
+  "description": "Trebate prijevoz u Vodicama? Bernardov taksi nudi sigurnu i točnu lokalnu vožnju te transfere do zračne luke i drugih gradova po fiksnoj cijeni. Rezervirajte izravno, bez pozivnih centara.",
+  "keywords": "taksi vodice, vodice taksi, taksi bernard, transfer zračna luka vodice, transferi vodice",
+  "og_image": "https://taxivodice.hr/assets/og-image.jpg",
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "TAXI Vodice Bernard",
+      "legalName": "BHOPE, obrt za taxi prijevoz i usluge, vl. Bernard Mikulić",
+      "url": "https://taxivodice.hr/hr/",
+      "telephone": "+385977539328",
+      "email": "bernard.mikulic@gmail.com",
+      "areaServed": ["Vodice", "Tribunj", "Šibenik", "Skradin", "Split", "Zadar", "Zagreb", "Dubrovnik"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Udovičića Benjamina 3b",
+        "addressLocality": "Vodice",
+        "postalCode": "22211",
+        "addressCountry": "HR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.7639,
+        "longitude": 15.7772
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "88"
+      },
+      "priceRange": "€€",
+      "@id": "https://taxivodice.hr/#business",
+      "image": "https://taxivodice.hr/assets/og-image.jpg",
+      "paymentAccepted": "Gotovina, kreditna kartica",
+      "currenciesAccepted": "EUR"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Kako mogu doći do taksija u Vodicama?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Taksi Vodice možete rezervirati izravno pozivom ili porukom Bernardu, bez aplikacija za rezervaciju ili pozivnih centara. Za dulje transfere, poput onih do zračne luke, preporučuje se rezervacija unaprijed jer je Bernard dostupan na zahtjev samo tijekom radnog vremena. Prilikom rezervacije unaprijed navedite broj leta te datum i vrijeme dolaska kako bi se let mogao pratiti. Možete nas kontaktirati putem stranice za kontakt." }
+        },
+        {
+          "@type": "Question",
+          "name": "Nudi li taksi Vodice transfere do zračne luke?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Da, taksi Vodice nudi transfere do i od zračne luke Split te zračne luke Zadar, kao i drugih regionalnih zračnih luka na upit. Cijene za transfere rezervirane unaprijed su fiksne i mogu se pronaći na stranici transferi do zračne luke." }
+        },
+        {
+          "@type": "Question",
+          "name": "Koliko košta taksi u Vodicama?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Cijena ovisi o relaciji i prijeđenoj udaljenosti. Lokalne vožnje unutar Vodica naplaćuju se drugačije od duljih putovanja. Kraće lokalne vožnje obračunavaju se prema standardnoj cijeni taksimetra, dok dulji transferi rezervirani unaprijed imaju fiksne cijene, navedene na stranici transferi do zračne luke." }
+        },
+        {
+          "@type": "Question",
+          "name": "Vozi li taksi Vodice do Šibenika ili drugih obližnjih mjesta?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Da, taksi Vodice pokriva međugradske relacije uključujući Šibenik, Skradin i druga odredišta duž dalmatinske obale. Pogledajte stranicu međugradski transferi za detalje." }
+        },
+        {
+          "@type": "Question",
+          "name": "Mogu li unaprijed rezervirati taksi Vodice?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Da, rezervacija unaprijed preporučuje se za transfere do zračne luke, rane jutarnje polaske ili tijekom vrhunca sezone, no vožnje u zadnji čas također se prihvaćaju ovisno o dostupnosti. Rezervaciju možete izvršiti izravno putem stranice za kontakt." }
+        },
+        {
+          "@type": "Question",
+          "name": "Je li taksi Vodice dostupan za izlete u Nacionalni park Krka?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Da, jednodnevni izleti do Nacionalnog parka Krka mogu se dogovoriti izravno s Bernardom." }
+        },
+        {
+          "@type": "Question",
+          "name": "Prihvaća li taksi Vodice plaćanje karticom?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Da, plaćanje karticom je prihvaćeno." }
+        }
+      ]
+    }
+  ]
+}

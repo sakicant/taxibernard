@@ -1,0 +1,134 @@
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Boeken</span>
+      <h1>Boek uw taxi</h1>
+      <p class="page-hero-sub">Vul hieronder uw reisgegevens in. Bernard bevestigt uw rit rechtstreeks, meestal binnen enkele uren, en stuurt u instructies voor de vooruitbetaling die uw reservering bevestigt.</p>
+    </div>
+  </section>
+
+  <section class="page-content">
+    <div class="container booking-page">
+      <form class="booking-form" id="booking-page-form" action="/booking-submit.php" method="POST">
+        <h3>Uw reis</h3>
+
+        <label for="book-from">Ophaallocatie (van)</label>
+        <input type="text" id="book-from" name="from" required placeholder="Vodice, uw hotel of adres">
+
+        <label for="book-to">Bestemming (naar)</label>
+        <input type="text" id="book-to" name="to" required placeholder="Split Airport (SPU), een plaats of adres">
+
+        <div class="quote-field">
+          <label for="book-trip">Rit</label>
+          <select id="book-trip" name="trip">
+            <option value="oneway">Enkele reis</option>
+            <option value="return">Retour</option>
+          </select>
+        </div>
+        <div class="quote-field-row">
+          <div class="quote-field">
+            <label for="book-pax">Passagiers</label>
+            <input type="number" id="book-pax" name="passengers" min="1" max="6" value="1" required>
+          </div>
+          <div class="quote-field">
+            <label for="book-lug">Bagage</label>
+            <input type="number" id="book-lug" name="luggage" min="0" max="6" value="1" required>
+          </div>
+        </div>
+
+        <p class="booking-price-line" id="booking-price-line" hidden>Vaste prijs: <strong id="sum-price">&mdash;</strong> <span class="booking-price-sub">per auto, tot 4 passagiers</span></p>
+
+        <h3>Reisgegevens</h3>
+
+        <div class="quote-field-row">
+          <div class="quote-field">
+            <label for="book-date">Ophaaldatum</label>
+            <input type="date" id="book-date" name="book-date" required>
+          </div>
+          <div class="quote-field">
+            <label for="book-time">Ophaaltijd</label>
+            <select id="book-time" name="book-time" required><option value="">--:--</option></select>
+          </div>
+        </div>
+        <p class="form-hint">Sneller een rit nodig, of buiten werkuren? <a href="tel:+385977539328">Bel Bernard</a> of <a href="https://wa.me/385977539328?text=Hi%20Bernard%2C%20I%27m%20on%20your%20booking%20page%20and%20need%20a%20ride%20sooner%20than%20the%20form%20allows%3A%20" target="_blank" rel="noopener">stuur een bericht via WhatsApp</a>.</p>
+
+        <div class="quote-field-row" id="book-return-fields" hidden>
+          <div class="quote-field">
+            <label for="book-return-date">Retourdatum</label>
+            <input type="date" id="book-return-date" name="book-return-date">
+          </div>
+          <div class="quote-field">
+            <label for="book-return-time">Retourtijd</label>
+            <select id="book-return-time" name="book-return-time"><option value="">--:--</option></select>
+          </div>
+        </div>
+
+        <label for="book-name">Naam</label>
+        <input type="text" id="book-name" name="name" required>
+
+        <div class="form-choice" role="group" aria-labelledby="contact-method-legend">
+          <span class="form-choice-legend" id="contact-method-legend">Hoe moet Bernard u bereiken om te bevestigen?</span>
+          <div class="form-choice-options">
+            <label class="form-choice-option">
+              <input type="radio" name="contact_method" value="email" required>
+              <span>E-mail</span>
+            </label>
+            <label class="form-choice-option">
+              <input type="radio" name="contact_method" value="whatsapp" required>
+              <span>WhatsApp</span>
+            </label>
+          </div>
+        </div>
+
+        <label for="book-email">E-mail <span class="field-flag" id="email-flag"></span></label>
+        <input type="email" id="book-email" name="email">
+
+        <label for="book-phone">Telefoon / WhatsApp <span class="field-flag" id="phone-flag"></span></label>
+        <input type="tel" id="book-phone" name="phone" placeholder="Inclusief landcode">
+
+        <div class="form-choice" role="group" aria-labelledby="payment-legend">
+          <span class="form-choice-legend" id="payment-legend">Hoe wilt u betalen?</span>
+          <div class="form-choice-options">
+            <label class="form-choice-option">
+              <input type="radio" name="payment_option" value="deposit" required>
+              <span>Aanbetaling ter bevestiging<span class="opt-sub">20% nu (minimaal &euro;20).</span></span>
+            </label>
+            <label class="form-choice-option">
+              <input type="radio" name="payment_option" value="full" required>
+              <span>Volledig vooruitbetalen<span class="opt-sub">Betaal de volledige rit vooraf.</span></span>
+            </label>
+          </div>
+        </div>
+
+        <label for="book-flight">Vluchtnummer (bij aankomst per vliegtuig)</label>
+        <input type="text" id="book-flight" name="book-flight" placeholder="bijv. FR1234, zodat Bernard de vlucht kan volgen">
+
+        <label for="book-dropoff-details">Bestemmingsdetails (optioneel)</label>
+        <input type="text" id="book-dropoff-details" name="book-dropoff-details" placeholder="Afzetadres, hotelnaam of een retourvluchtnummer">
+
+        <label for="book-notes">Nog iets anders? (optioneel)</label>
+        <textarea id="book-notes" name="book-notes" rows="4" placeholder="Kinderzitje, extra tussenstops, grote bagage, instructies voor het ophalen..."></textarea>
+
+        <label class="form-consent">
+          <input type="checkbox" id="book-invoice" name="invoice_required" value="1">
+          <span>Ik heb een factuur nodig voor mijn bedrijf.</span>
+        </label>
+
+        <input type="text" id="book-company" name="company" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <label class="form-consent">
+          <input type="checkbox" id="book-consent" name="consent" value="1" required>
+          <span>Ik begrijp dat ik nu alleen een boekingsaanvraag verstuur en dat Bernard contact met mij opneemt via mijn gekozen contactmethode om de boeking te bevestigen (door het betalen van de vereiste aanbetaling). Ik ga ook akkoord met de <a href="/nl/algemene-voorwaarden/">Algemene Voorwaarden</a> en het <a href="/nl/privacybeleid/">Privacybeleid</a>.</span>
+        </label>
+
+        <button type="submit" class="btn btn-primary">Boekingsaanvraag versturen</button>
+        <p class="form-note" id="booking-page-note"></p>
+      </form>
+    </div>
+  </section>
+  <script>
+  (function(){
+    var o='';
+    for(var h=0;h<24;h++){for(var m=0;m<60;m+=5){var t=(h<10?'0':'')+h+':'+(m<10?'0':'')+m;o+='<option value="'+t+'">'+t+'</option>';}}
+    ['book-time','book-return-time'].forEach(function(id){var s=document.getElementById(id);if(s)s.insertAdjacentHTML('beforeend',o);});
+  })();
+  </script>

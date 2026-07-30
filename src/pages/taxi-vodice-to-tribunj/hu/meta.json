@@ -1,0 +1,86 @@
+{
+  "slug": "taxi-vodice-tribunj",
+  "title": "Taxi Vodice – Tribunj | Fix 15€ transzfer | TAXI Bernard",
+  "description": "Privát taxi és transzfer Vodice és Tribunj között Bernarddal. Fix 15€ egy autóra, akár 4 utasnak, ajtótól ajtóig, taxióra nélkül.",
+  "keywords": "taxi vodice tribunj, transzfer vodice tribunj, vodice tribunj taxi",
+  "og_image": "https://taxivodice.hr/assets/img/espace-vodice.webp",
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Privát taxitranszfer",
+      "name": "Taxi Vodice – Tribunj",
+      "description": "Privát, fix árú taxitranszfer Vodice és Tribunj között, 15 euró egy autóra, akár 4 utasnak, ajtótól ajtóig.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "TAXI Vodice Bernard",
+        "telephone": "+385977539328",
+        "email": "bernard.mikulic@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Udovičića Benjamina 3b",
+          "addressLocality": "Vodice",
+          "postalCode": "22211",
+          "addressCountry": "HR"
+        }
+      },
+      "areaServed": [
+        "Vodice",
+        "Tribunj"
+      ],
+      "url": "https://taxivodice.hr/hu/taxi-vodice-tribunj/",
+      "offers": {
+        "@type": "Offer",
+        "price": "15",
+        "priceCurrency": "EUR",
+        "description": "Egyirányú privát transzfer Vodice és Tribunj között, egy autóra, akár 4 utasnak. Oda-vissza 30€."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Mennyibe kerül a taxi Vodice és Tribunj között?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fix 15€ egy autóra, akár 4 utasnak, egy útra, a csomagszállítással együtt. Az oda-vissza út 30€."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Az ár személyenkénti vagy járművenkénti?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Az ár járművenkénti, nem személyenkénti. Akár 4 utast és a csomagokat is tartalmazza felár nélkül, 5 vagy 6 utas esetén kis felárat számítunk fel."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Honnan történik a felvétel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Az Ön pontos címén Vodice városában, legyen az otthon, szálloda vagy apartman. Küldje el a címet foglaláskor, Bernard pedig visszaigazolja a találkozási pontot."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mennyivel korábban érdemes foglalni?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Az előzetes foglalás ajánlott az elérhetőség biztosítására, különösen a nyári csúcsszezonban. Utolsó pillanatban felmerülő igény esetén hívja fel Bernardot, vagy írjon neki WhatsAppon."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "El tud vinni Bernard 4 utasnál többet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Igen, Bernard Renault Espace-a akár 6 utast is el tud szállítani. 5 vagy 6 utas esetén kis felárat számítunk fel, a pontos összegért vegye fel a kapcsolatot Bernarddal."
+          }
+        }
+      ]
+    }
+  ]
+}

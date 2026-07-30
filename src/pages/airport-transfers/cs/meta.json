@@ -1,0 +1,43 @@
+{
+  "slug": "letistni-transfery",
+  "title": "Letištní transfery z Vodic | od 100 € | TAXI Bernard",
+  "description": "Letištní transfery z Vodic na letiště Split a Zadar za pevnou cenu. Žádný taxametr, žádná překvapení, zavazadla v ceně. Rezervujte přímo u Bernarda.",
+  "keywords": "letištní transfer vodice, taxi vodice letiště split, taxi vodice letiště zadar",
+  "og_image": "https://taxivodice.hr/assets/img/espace-6-seats.webp",
+  "schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Jak svého řidiče na letišti poznám?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Bernard na vás bude čekat v příletové hale po výdeji zavazadel a rád pomůže se zavazadly. Pokud chcete, můžete si podrobnosti o vyzvednutí předem potvrdit přes kontaktní stránku." }
+      },
+      {
+        "@type": "Question",
+        "name": "Co když má můj let zpoždění?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Žádný problém. Lety jsou sledovány v reálném čase, takže pokud má váš let zpoždění, čas vyzvednutí se automaticky upraví bez příplatku." }
+      },
+      {
+        "@type": "Question",
+        "name": "Je cena za osobu, nebo za vozidlo?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Cena je za vozidlo, ne za osobu. Zahrnuje až 4 cestující a zavazadla bez příplatku, s malým příplatkem za 5 nebo 6 cestujících." }
+      },
+      {
+        "@type": "Question",
+        "name": "Jak dlouho předem bych měl letištní transfer z Vodic rezervovat?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Rezervace předem se doporučuje pro zajištění dostupnosti, zejména v hlavní letní sezóně nebo u brzkých ranních a pozdních nočních letů. Rezervovat můžete přímo přes kontaktní stránku." }
+      },
+      {
+        "@type": "Question",
+        "name": "Poskytujete dětské sedačky?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ano, dětské a podsedací sedačky jsou k dispozici na vyžádání, stačí to zmínit při rezervaci transferu." }
+      },
+      {
+        "@type": "Question",
+        "name": "Můžu si rezervovat i transfer do Šibeniku nebo dalších okolních měst?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ano, Bernard pokrývá i meziměstské trasy včetně Šibeniku a Skradinu. Podrobnosti najdete na stránce meziměstských transferů." }
+      }
+    ]
+  }
+}

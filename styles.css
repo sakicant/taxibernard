@@ -134,6 +134,17 @@ a.topbar-item:hover { color: var(--yellow); }
 .nav-dropdown-menu a { color: var(--gray-800); font-size: 0.9rem; padding: 9px 12px; border-radius: 4px; white-space: nowrap; }
 .nav-dropdown-menu a:hover { color: var(--yellow-dark); background: var(--gray-100); }
 
+/* Language switcher (last item in main-nav) */
+.nav-lang-dropdown { padding-left: 14px; margin-left: 6px; border-left: 1px solid var(--gray-200); }
+.nav-lang-dropdown .nav-dropdown-toggle { font-weight: 700; font-size: 0.85rem; }
+.nav-lang-dropdown .nav-dropdown-menu { min-width: 170px; }
+.nav-lang-item { display: flex; align-items: center; gap: 8px; color: var(--gray-800); font-size: 0.88rem; padding: 9px 12px; border-radius: 4px; }
+a.nav-lang-item:hover { color: var(--yellow-dark); background: var(--gray-100); }
+.nav-lang-item.active { color: var(--yellow-dark); font-weight: 700; }
+.nav-lang-item.soon { color: var(--gray-400); cursor: default; }
+.nav-lang-flag { width: 20px; height: 15px; object-fit: cover; border-radius: 2px; flex: 0 0 auto; vertical-align: middle; }
+.nav-lang-dropdown .nav-dropdown-toggle .nav-lang-flag { margin-right: 2px; }
+
 .nav-toggle { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 34px; height: 34px; background: none; border: none; cursor: pointer; padding: 0; }
 .nav-toggle span { display: block; height: 2px; width: 100%; background: var(--black); border-radius: 2px; transition: transform 0.2s ease, opacity 0.2s ease; }
 .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -458,6 +469,7 @@ section { padding: 64px 0; }
   .nav-dropdown-menu { position: static; transform: none; margin: 0; box-shadow: none; border: none; padding: 4px 0 4px 12px; min-width: 0; display: none; }
   .nav-dropdown.open .nav-dropdown-menu { display: flex; }
   @media (hover: hover) { .nav-dropdown:hover .nav-dropdown-menu { display: none; } .nav-dropdown.open .nav-dropdown-menu { display: flex; } }
+  .nav-lang-dropdown { border-left: none; border-top: 1px solid var(--gray-200); margin-left: 0; padding-left: 0; padding-top: 8px; margin-top: 8px; width: 100%; }
   .header-cta .btn-compact span.btn-label-full { display: none; }
 }
 

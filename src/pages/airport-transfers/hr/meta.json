@@ -1,0 +1,43 @@
+{
+  "slug": "transferi-zracna-luka",
+  "title": "Transferi do zračne luke Vodice | već od 100€ | TAXI Bernard",
+  "description": "Transferi po fiksnoj cijeni od Vodica do zračnih luka Split i Zadar. Bez taksimetra, bez iznenađenja, prtljaga uključena. Rezervirajte izravno kod Bernarda.",
+  "keywords": "transfer zračna luka vodice, taksi vodice zračna luka split, taksi vodice zračna luka zadar",
+  "og_image": "https://taxivodice.hr/assets/img/espace-6-seats.webp",
+  "schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Kako ću prepoznati svog vozača na zračnoj luci?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Bernard će vas čekati u dolaznoj hali nakon preuzimanja prtljage, spreman pomoći vam s prtljagom. Ako želite, detalje preuzimanja možete unaprijed potvrditi putem stranice za kontakt." }
+      },
+      {
+        "@type": "Question",
+        "name": "Što ako moj let kasni?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Nema problema. Letovi se prate u stvarnom vremenu, pa se u slučaju kašnjenja leta vrijeme preuzimanja automatski prilagođava bez dodatne naplate." }
+      },
+      {
+        "@type": "Question",
+        "name": "Je li cijena po osobi ili po vozilu?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Cijena je po vozilu, ne po osobi. Uključuje do 4 putnika i prtljagu bez dodatne naplate, uz malu doplatu za 5 ili 6 putnika." }
+      },
+      {
+        "@type": "Question",
+        "name": "Koliko unaprijed trebam rezervirati transfer do zračne luke Vodice?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Preporučuje se rezervacija unaprijed kako bi se osigurala dostupnost, pogotovo tijekom vrhunca sezone ili za rane jutarnje i kasne noćne letove. Rezervaciju možete izvršiti izravno putem stranice za kontakt." }
+      },
+      {
+        "@type": "Question",
+        "name": "Nudite li dječje sjedalice?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Da, dječje i booster sjedalice dostupne su na zahtjev, samo to spomenite prilikom rezervacije transfera." }
+      },
+      {
+        "@type": "Question",
+        "name": "Mogu li rezervirati i transfer do Šibenika ili drugih obližnjih mjesta?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Da, Bernard pokriva i međugradske relacije uključujući Šibenik i Skradin. Pogledajte stranicu međugradski transferi za detalje." }
+      }
+    ]
+  }
+}

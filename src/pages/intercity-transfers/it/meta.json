@@ -1,0 +1,48 @@
+{
+  "slug": "transfer-tra-citta",
+  "title": "Transfer Vodice | TAXI Bernard",
+  "description": "Transfer a prezzo fisso da Vodice per Šibenik, Spalato, Zara, Skradin, Zagabria, Dubrovnik e Makarska. Nessun tassametro, nessuna sorpresa. Prenota direttamente con Bernard.",
+  "keywords": "transfer vodice, taxi vodice sibenik, taxi vodice spalato, taxi vodice zara, taxi vodice skradin",
+  "og_image": "https://taxivodice.hr/assets/img/espace-6-seats.webp",
+  "schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Con quanto anticipo devo prenotare un transfer da Vodice?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Si consiglia di prenotare in anticipo per garantire la disponibilità, soprattutto durante l'alta stagione estiva. Puoi prenotare direttamente tramite la pagina contatti." }
+      },
+      {
+        "@type": "Question",
+        "name": "Il prezzo è a persona o a veicolo?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Il prezzo è a veicolo, non a persona. Copre fino a 4 passeggeri e i bagagli senza costi aggiuntivi, con un piccolo supplemento per 5 o 6 passeggeri." }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso prenotare una corsa di sola andata o andata e ritorno?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Entrambe le opzioni sono disponibili. Comunica a Bernard i tuoi programmi al momento della prenotazione, e lui organizzerà l'orario di ritiro più adatto a te." }
+      },
+      {
+        "@type": "Question",
+        "name": "Offrite il ritiro in hotel o a un indirizzo specifico?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sì, Bernard verrà a prenderti direttamente dal tuo hotel, appartamento o qualsiasi indirizzo a Vodice, senza bisogno di incontrarsi in un punto centrale." }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso fare una sosta lungo il tragitto?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Brevi soste possono solitamente essere organizzate, basta menzionarlo al momento della prenotazione così Bernard può pianificare il percorso e i tempi di conseguenza." }
+      },
+      {
+        "@type": "Question",
+        "name": "E se la mia destinazione non è nell'elenco?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Nessun problema, contatta Bernard direttamente tramite la pagina contatti con la tua destinazione per un preventivo personalizzato." }
+      },
+      {
+        "@type": "Question",
+        "name": "Accettate pagamenti con carta?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sì, i pagamenti con carta sono accettati." }
+      }
+    ]
+  }
+}

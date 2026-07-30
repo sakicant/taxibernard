@@ -10,6 +10,10 @@
 - Serves Vodice and the wider Dalmatian coast, and airports at Split (SPU), Zadar (ZAD), Zagreb (ZAG) and Dubrovnik (DBV).
 - Running his own taxi service since 2024.
 
+## Languages
+
+The whole site is published in 9 languages. English is served at the root; each other language lives under its own prefix with a fully translated slug: Croatian /hr/, German /de/, Polish /pl/, Czech /cs/, Italian /it/, French /fr/, Dutch /nl/ and Hungarian /hu/. Every page links to its alternates via hreflang.
+
 ## Main pages
 
 - [Home](https://taxivodice.hr/): Local taxi and transfers in Vodice.

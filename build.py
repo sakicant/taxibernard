@@ -2,15 +2,16 @@
 
 Each page lives in src/pages/<page-id>/<lang>/ as a meta.json + content.html
 pair. <page-id> groups the translations of one logical page together (e.g.
-"about"); <lang> is an ISO 639-1 code such as "en", "hr". English is the
-canonical language and is served at the site root (e.g. /about/); every
-other language is served under its own language prefix (e.g. /hr/o-meni/).
+"about"); <lang> is an ISO 639-1 code such as "en", "hr", "de". English is
+the canonical language and is served at the site root (e.g. /about/); every
+other language is served under its own language prefix with a fully
+translated slug (e.g. /hr/o-bernardu/), not the English slug reused.
 
-Only "en" exists today. To add a language: add its code to LANGUAGES below,
-add a src/partials/<name>.<lang>.html for each partial that needs
-translating, and add src/pages/<page-id>/<lang>/{meta.json,content.html}
-for each page. The build picks up new language folders automatically and
-wires up hreflang alternates between whatever variants exist.
+To add a language: add its code to LANGUAGES below, add a
+src/partials/<name>.<lang>.html for each partial that needs translating,
+and add src/pages/<page-id>/<lang>/{meta.json,content.html} for each page.
+The build picks up new language folders automatically and wires up
+hreflang alternates between whatever variants exist.
 
 Run `python build.py` after editing any partial or page content.
 """
@@ -29,7 +30,44 @@ DEFAULT_OG_IMAGE = f"{SITE_URL}/assets/og-image.jpg"
 DEFAULT_LANG = "en"
 
 # Supported languages. Codes must be valid ISO 639-1 for correct hreflang.
-LANGUAGES = ["en"]
+LANGUAGES = ["en", "hr", "de", "pl", "cs", "it", "fr", "nl", "hu"]
+
+LANGUAGE_LABELS = {
+    "en": "EN", "hr": "HR", "de": "DE", "pl": "PL",
+    # "cs" is the ISO 639-1 code (used for hreflang and the /cs/ path); the
+    # switcher shows "CZ" because visitors recognise the country code.
+    "cs": "CZ", "it": "IT", "fr": "FR", "nl": "NL", "hu": "HU",
+}
+
+
+# Emoji flags don't render on Windows desktop browsers, so we self-host SVG
+# flag images instead. One file per language at /assets/img/flags/<lang>.svg.
+def flag_img(lang):
+    return (f'<img class="nav-lang-flag" src="/assets/img/flags/{lang}.svg" '
+            f'width="20" height="15" alt="" decoding="async">')
+
+
+def build_lang_switcher(variants, current_lang):
+    current_label = LANGUAGE_LABELS[current_lang]
+
+    items = []
+    for lang in LANGUAGES:
+        flag = flag_img(lang)
+        label = LANGUAGE_LABELS[lang]
+        if lang in variants:
+            url = url_path(lang, variants[lang].get("slug", ""))
+            cls = "nav-lang-item active" if lang == current_lang else "nav-lang-item"
+            items.append(f'<a href="{url}" class="{cls}">{flag} {label}</a>')
+        else:
+            items.append(f'<span class="nav-lang-item soon" title="Coming soon">{flag} {label}</span>')
+    menu_items = "\n          ".join(items)
+
+    return f'''<div class="nav-dropdown nav-lang-dropdown">
+        <button class="nav-dropdown-toggle">{flag_img(current_lang)} {current_label} <span class="caret"></span></button>
+        <div class="nav-dropdown-menu">
+          {menu_items}
+        </div>
+      </div>'''
 
 
 def compute_asset_version():
@@ -131,13 +169,13 @@ def load_partial(name, lang):
     return _PARTIAL_CACHE[key]
 
 
-def build_variant(lang, meta, content_path, base_tpl, hreflang_block):
+def build_variant(lang, meta, content_path, base_tpl, hreflang_block, variants):
     body = read(content_path)
     body = body.replace("{{QUOTE_WIDGET}}", load_partial("quote-widget", lang))
     slug = meta.get("slug", "")
     canonical = canonical_url(lang, slug)
     footer_html = load_partial("footer", lang)
-    header_html = load_partial("header", lang)
+    header_html = load_partial("header", lang).replace("{{LANG_SWITCHER}}", build_lang_switcher(variants, lang))
 
     schema = meta.get("schema")
     schema_list = schema if isinstance(schema, list) else ([schema] if schema else [])
@@ -166,14 +204,14 @@ def build_variant(lang, meta, content_path, base_tpl, hreflang_block):
     print(f"built {rel}")
 
 
-def page_priority(slug):
-    if slug == "":
+def page_priority(page_id):
+    if page_id == "home":
         return "1.0"
-    if slug in ("airport-transfers", "intercity-transfers"):
+    if page_id in ("airport-transfers", "intercity-transfers"):
         return "0.9"
-    if slug in ("privacy-policy", "terms-and-conditions"):
+    if page_id in ("privacy-policy", "terms-and-conditions"):
         return "0.3"
-    if "-to-" in slug:  # route pages, e.g. taxi-vodice-to-murter
+    if "-to-" in page_id:  # route pages, e.g. taxi-vodice-to-murter
         return "0.6"
     return "0.8"
 
@@ -182,9 +220,10 @@ def write_sitemap(pages):
     today = datetime.date.today().isoformat()
     urls = []
     for page_id, variants in sorted(pages.items()):
+        prio = page_priority(page_id)
         for lang, meta in variants.items():
             slug = meta.get("slug", "")
-            urls.append((canonical_url(lang, slug), page_priority(slug)))
+            urls.append((canonical_url(lang, slug), prio))
     urls.sort()
     lines = ['<?xml version="1.0" encoding="UTF-8"?>',
              '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
@@ -206,7 +245,7 @@ def main():
         hreflang_block = build_hreflang_block(page_id, variants)
         for lang, meta in variants.items():
             content_path = os.path.join(PAGES_DIR, page_id, lang, "content.html")
-            build_variant(lang, meta, content_path, base_tpl, hreflang_block)
+            build_variant(lang, meta, content_path, base_tpl, hreflang_block, variants)
 
     write_sitemap(pages)
 

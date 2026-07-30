@@ -1,0 +1,82 @@
+{
+  "slug": "",
+  "title": "TAXI Vodice - Helyi Vodice-i taxi és transzferek | Taxi Bernard",
+  "description": "Fuvarra van szüksége Vodicében? Bernard taxija biztonságos, pontos helyi fuvarokat és fix árú reptéri és városközi transzfereket kínál. Foglaljon közvetlenül, call center nélkül.",
+  "keywords": "taxi vodice, vodice taxi, taxi bernard, vodice reptéri transzfer, vodice transzferek",
+  "og_image": "https://taxivodice.hr/assets/og-image.jpg",
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "TAXI Vodice Bernard",
+      "legalName": "BHOPE, obrt za taxi prijevoz i usluge, vl. Bernard Mikulić",
+      "url": "https://taxivodice.hr/hu/",
+      "telephone": "+385977539328",
+      "email": "bernard.mikulic@gmail.com",
+      "areaServed": ["Vodice", "Tribunj", "Šibenik", "Skradin", "Split", "Zadar", "Zagreb", "Dubrovnik"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Udovičića Benjamina 3b",
+        "addressLocality": "Vodice",
+        "postalCode": "22211",
+        "addressCountry": "HR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.7639,
+        "longitude": 15.7772
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "88"
+      },
+      "priceRange": "€€",
+      "@id": "https://taxivodice.hr/#business",
+      "image": "https://taxivodice.hr/assets/og-image.jpg",
+      "paymentAccepted": "Cash, Credit Card",
+      "currenciesAccepted": "EUR"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Hogyan hívhatok taxit Vodicében?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A Taxi Vodice szolgáltatást közvetlenül Bernard felhívásával vagy üzenettel foglalhatja, foglalási alkalmazások vagy call centerek nélkül. Hosszabb transzferek, például reptéri transzferek esetén érdemes előre foglalni, mivel Bernard csak munkaidőben áll rendelkezésre igény szerint. Előre foglaláskor kérjük, adja meg a járatszámát, valamint az érkezés dátumát és időpontját, hogy a járatot nyomon lehessen követni. Elérheti a kapcsolat oldalon keresztül." }
+        },
+        {
+          "@type": "Question",
+          "name": "Kínál a Taxi Vodice reptéri transzfereket?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Igen, a Taxi Vodice transzfereket biztosít a Split-i és a Zadar-i repülőtérre és onnan, valamint kérésre más regionális repülőterekre is. Az előre lefoglalt transzferek árai fixek, és megtalálhatók a reptéri transzferek oldalon." }
+        },
+        {
+          "@type": "Question",
+          "name": "Mennyibe kerül egy taxi Vodicében?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Az árak az útvonaltól és a megtett távolságtól függenek. A Vodicén belüli helyi fuvarok másképp vannak árazva, mint a hosszabb utak. A rövidebb helyi fuvarokat a standard taxióra-díjszabás alapján számoljuk, míg az előre lefoglalt hosszabb transzfereknek fix áraik vannak, amelyek a reptéri transzferek oldalon találhatók." }
+        },
+        {
+          "@type": "Question",
+          "name": "Jár a Taxi Vodice Šibenikbe vagy más közeli városokba?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Igen, a Taxi Vodice városközi útvonalakat is kiszolgál, beleértve Šibeniket, Skradint és más úti célokat a dalmát tengerparton. Részletekért lásd a városok közötti transzferek oldalt." }
+        },
+        {
+          "@type": "Question",
+          "name": "Foglalhatok Taxi Vodice szolgáltatást előre?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Igen, előzetes foglalás ajánlott reptéri transzferek, korai reggeli indulások vagy a nyári csúcsszezon esetén, bár utolsó pillanatban felmerülő helyi fuvarokat is elfogadunk, elérhetőség függvényében. Közvetlenül a kapcsolat oldalon keresztül foglalhat." }
+        },
+        {
+          "@type": "Question",
+          "name": "Elérhető a Taxi Vodice a Krka Nemzeti Parkba tett kirándulásokhoz?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Igen, egynapos kirándulások a Krka Nemzeti Parkba közvetlenül Bernarddal szervezhetők." }
+        },
+        {
+          "@type": "Question",
+          "name": "Elfogad a Taxi Vodice bankkártyás fizetést?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Igen, a bankkártyás fizetést elfogadjuk." }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "slug": "transfer-aeroporto",
+  "title": "Transfer Aeroporto Vodice | a partire da 100€ | TAXI Bernard",
+  "description": "Transfer aeroporto Vodice a prezzo fisso per Spalato e Zara. Nessun tassametro, nessuna sorpresa, bagagli inclusi. Prenota direttamente con Bernard.",
+  "keywords": "transfer aeroporto vodice, taxi vodice aeroporto spalato, taxi vodice aeroporto zara",
+  "og_image": "https://taxivodice.hr/assets/img/espace-6-seats.webp",
+  "schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Come troverò il mio autista in aeroporto?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Bernard ti aspetterà nella sala arrivi dopo il ritiro bagagli, pronto ad aiutarti con le valigie. Se preferisci, puoi confermare i dettagli del ritiro in anticipo tramite la pagina contatti." }
+      },
+      {
+        "@type": "Question",
+        "name": "Cosa succede se il mio volo è in ritardo?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Nessun problema. I voli vengono monitorati in tempo reale, quindi se il tuo volo è in ritardo, l'orario di ritiro viene adattato automaticamente senza costi aggiuntivi." }
+      },
+      {
+        "@type": "Question",
+        "name": "Il prezzo è a persona o a veicolo?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Il prezzo è a veicolo, non a persona. Copre fino a 4 passeggeri e i bagagli senza costi aggiuntivi, con un piccolo supplemento per 5 o 6 passeggeri." }
+      },
+      {
+        "@type": "Question",
+        "name": "Con quanto anticipo devo prenotare un transfer aeroporto Vodice?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Si consiglia di prenotare in anticipo per garantire la disponibilità, soprattutto durante l'alta stagione estiva o per voli mattutini e notturni. Puoi prenotare direttamente tramite la pagina contatti." }
+      },
+      {
+        "@type": "Question",
+        "name": "Fornite seggiolini per bambini?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sì, seggiolini e rialzi per bambini sono disponibili su richiesta, basta menzionarlo al momento della prenotazione del transfer." }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso prenotare anche un transfer per Šibenik o altre città vicine?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sì, Bernard copre anche percorsi intercity tra cui Šibenik e Skradin. Consulta la pagina dei transfer tra città per maggiori dettagli." }
+      }
+    ]
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "slug": "taxi-vodice-nach-betina",
+  "title": "Taxi Vodice nach Betina | Fester Transfer für 50 € | TAXI Bernard",
+  "description": "Privates Taxi und Transfer von Vodice nach Betina mit Bernard. Fester Preis von 50 € pro Fahrzeug, bis zu 4 Fahrgäste, Tür zu Tür, ohne Taxameter.",
+  "keywords": "taxi vodice nach betina, transfer vodice nach betina, taxi vodice betina",
+  "og_image": "https://taxivodice.hr/assets/img/espace-vodice.webp",
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Privater Taxitransfer",
+      "name": "Taxi Vodice nach Betina",
+      "description": "Privater Taxitransfer zum Festpreis von Vodice nach Betina, 50 Euro pro Fahrzeug für bis zu 4 Fahrgäste, Tür zu Tür.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "TAXI Vodice Bernard",
+        "telephone": "+385977539328",
+        "email": "bernard.mikulic@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Udovičića Benjamina 3b",
+          "addressLocality": "Vodice",
+          "postalCode": "22211",
+          "addressCountry": "HR"
+        }
+      },
+      "areaServed": [
+        "Vodice",
+        "Betina"
+      ],
+      "url": "https://taxivodice.hr/de/taxi-vodice-nach-betina/",
+      "offers": {
+        "@type": "Offer",
+        "price": "50",
+        "priceCurrency": "EUR",
+        "description": "Einfache private Fahrt von Vodice nach Betina, pro Fahrzeug für bis zu 4 Fahrgäste. Rückfahrt 100 €."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Was kostet ein Taxi von Vodice nach Betina?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ein Festpreis von 50 € pro Fahrzeug für bis zu 4 Fahrgäste, einfache Fahrt, Gepäck inklusive. Eine Rückfahrt kostet 100 €."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Gilt der Preis pro Person oder pro Fahrzeug?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Der Preis gilt pro Fahrzeug, nicht pro Person. Er deckt bis zu 4 Fahrgäste und Gepäck ohne Aufpreis ab, für 5 oder 6 Fahrgäste fällt eine kleine zusätzliche Gebühr an."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wo erfolgt die Abholung?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An Ihrer genauen Adresse in Vodice, egal ob Wohnhaus, Hotel oder Apartment. Senden Sie die Adresse bei der Buchung, Bernard bestätigt dann den Treffpunkt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie weit im Voraus sollte ich buchen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Eine Buchung im Voraus wird empfohlen, um die Verfügbarkeit zu sichern, besonders in der Hochsaison im Sommer. Für eine spontane Fahrt rufen Sie Bernard einfach an oder schreiben Sie ihm direkt über WhatsApp."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann Bernard mehr als 4 Fahrgäste mitnehmen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, Bernards Renault Espace bietet Platz für bis zu 6 Fahrgäste. Für 5 oder 6 Fahrgäste fällt eine kleine zusätzliche Gebühr an, den genauen Betrag erfahren Sie direkt von Bernard."
+          }
+        }
+      ]
+    }
+  ]
+}

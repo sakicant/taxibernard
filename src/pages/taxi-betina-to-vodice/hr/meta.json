@@ -1,0 +1,86 @@
+{
+  "slug": "taxi-betina-do-vodica",
+  "title": "Taksi Betina - Vodice | Fiksno €50 | TAXI Bernard",
+  "description": "Privatni taksi i transfer, relacija Betina - Vodice. Fiksno €50 po vozilu, do 4 putnika, od vrata do vrata. Rezervirajte izravno kod Bernarda.",
+  "keywords": "taksi betina - vodice, transfer betina - vodice, prijevoz betina - vodice",
+  "og_image": "https://taxivodice.hr/assets/img/espace-vodice.webp",
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Privatni taksi transfer",
+      "name": "Taksi Betina - Vodice",
+      "description": "Privatni taksi i transfer po fiksnoj cijeni, relacija Betina - Vodice, 50 eura po vozilu za do 4 putnika, od vrata do vrata.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "TAXI Vodice Bernard",
+        "telephone": "+385977539328",
+        "email": "bernard.mikulic@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Udovičića Benjamina 3b",
+          "addressLocality": "Vodice",
+          "postalCode": "22211",
+          "addressCountry": "HR"
+        }
+      },
+      "areaServed": [
+        "Betina",
+        "Vodice"
+      ],
+      "url": "https://taxivodice.hr/hr/taxi-betina-do-vodica/",
+      "offers": {
+        "@type": "Offer",
+        "price": "50",
+        "priceCurrency": "EUR",
+        "description": "Jednosmjerni privatni transfer, relacija Betina - Vodice, po vozilu za do 4 putnika. Povratno 100 eura."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Koliko košta taksi na relaciji Betina - Vodice?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fiksno 50 € po vozilu za do 4 putnika, u jednom smjeru, prtljaga uključena. Povratna vožnja iznosi 100 €."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Je li cijena po osobi ili po vozilu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cijena je po vozilu, ne po osobi. Uključuje do 4 putnika i prtljagu bez dodatne naplate, uz malu doplatu za 5 ili 6 putnika."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Gdje me preuzimate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Na vašoj točnoj adresi u Betini, bilo da je riječ o kući, hotelu ili apartmanu. Pošaljite adresu prilikom rezervacije i Bernard će potvrditi mjesto susreta."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Koliko unaprijed trebam rezervirati?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Preporučamo rezervaciju unaprijed kako bismo osigurali dostupnost, pogotovo tijekom ljetne sezone. Za vožnju u zadnji čas nazovite ili pišite Bernardu na WhatsApp."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Može li Bernard primiti više od 4 putnika?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da, Bernardov Renault Espace ima 6 sjedala. Za 5 ili 6 putnika naplaćuje se mala doplata, za točan iznos kontaktirajte Bernarda."
+          }
+        }
+      ]
+    }
+  ]
+}

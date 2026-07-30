@@ -1,0 +1,48 @@
+{
+  "slug": "transfery-miedzymiastowe",
+  "title": "Transfery Vodice | TAXI Bernard",
+  "description": "Transfery w stałej cenie z Vodic do Šibenika, Splitu, Zadaru, Skradina, Zagrzebia, Dubrownika i Makarskiej. Bez taksometru, bez niespodzianek. Rezerwuj bezpośrednio u Bernarda.",
+  "keywords": "transfery vodice, taxi vodice šibenik, taxi vodice split, taxi vodice zadar, taxi vodice skradin",
+  "og_image": "https://taxivodice.hr/assets/img/espace-6-seats.webp",
+  "schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Z jakim wyprzedzeniem powinienem zarezerwować transfer Vodice?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Rezerwacja z wyprzedzeniem jest zalecana, aby zagwarantować dostępność, szczególnie w szczycie sezonu letniego. Możesz zarezerwować bezpośrednio poprzez stronę kontaktową." }
+      },
+      {
+        "@type": "Question",
+        "name": "Czy cena jest za osobę czy za pojazd?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Cena jest za pojazd, nie za osobę. Obejmuje do 4 pasażerów i bagaż bez dodatkowych kosztów, przy 5 lub 6 pasażerach obowiązuje niewielka dopłata." }
+      },
+      {
+        "@type": "Question",
+        "name": "Czy mogę zarezerwować przejazd w jedną stronę czy w obie strony?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Obie opcje są dostępne. Wystarczy poinformować Bernarda o swoich planach podczas rezerwacji, a on ustali dogodną dla Ciebie godzinę odbioru." }
+      },
+      {
+        "@type": "Question",
+        "name": "Czy oferujecie odbiór z hotelu lub adresu?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Tak, Bernard odbierze Cię bezpośrednio z Twojego hotelu, apartamentu lub dowolnego adresu w Vodicach, bez konieczności spotykania się w centralnym miejscu." }
+      },
+      {
+        "@type": "Question",
+        "name": "Czy mogę zrobić postój po drodze?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Krótkie postoje można zazwyczaj zorganizować, wystarczy o tym wspomnieć podczas rezerwacji, aby Bernard mógł odpowiednio zaplanować trasę i czas przejazdu." }
+      },
+      {
+        "@type": "Question",
+        "name": "Co jeśli mojego celu podróży nie ma na liście?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Żaden problem, skontaktuj się bezpośrednio z Bernardem poprzez stronę kontaktową, podając cel podróży, aby uzyskać indywidualną wycenę." }
+      },
+      {
+        "@type": "Question",
+        "name": "Czy akceptujecie płatności kartą?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Tak, płatności kartą są akceptowane." }
+      }
+    ]
+  }
+}

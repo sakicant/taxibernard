@@ -1,0 +1,82 @@
+{
+  "slug": "",
+  "title": "TAXI Vodice - Lokale taxi & transfers in Vodice | Taxi Bernard",
+  "description": "Een rit nodig in Vodice? Bernard's taxi biedt veilige, stipte lokale ritten en luchthaven- en stadstransfers tegen vaste prijzen. Boek rechtstreeks, geen callcenters.",
+  "keywords": "taxi vodice, vodice taxi, taxi bernard, luchthaventransfer vodice, transfers vodice",
+  "og_image": "https://taxivodice.hr/assets/og-image.jpg",
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "TAXI Vodice Bernard",
+      "legalName": "BHOPE, obrt za taxi prijevoz i usluge, vl. Bernard Mikulić",
+      "url": "https://taxivodice.hr/nl/",
+      "telephone": "+385977539328",
+      "email": "bernard.mikulic@gmail.com",
+      "areaServed": ["Vodice", "Tribunj", "Šibenik", "Skradin", "Split", "Zadar", "Zagreb", "Dubrovnik"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Udovičića Benjamina 3b",
+        "addressLocality": "Vodice",
+        "postalCode": "22211",
+        "addressCountry": "HR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.7639,
+        "longitude": 15.7772
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "88"
+      },
+      "priceRange": "€€",
+      "@id": "https://taxivodice.hr/#business",
+      "image": "https://taxivodice.hr/assets/og-image.jpg",
+      "paymentAccepted": "Cash, Credit Card",
+      "currenciesAccepted": "EUR"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Hoe kan ik een taxi in Vodice krijgen?",
+          "acceptedAnswer": { "@type": "Answer", "text": "U kunt taxi Vodice rechtstreeks boeken door Bernard te bellen of te appen, zonder boekingsapps of callcenters. Voor langere transfers, zoals luchthaventransfers, is het handig om vooraf te boeken omdat Bernard alleen tijdens werkuren op afroep beschikbaar is. Geef bij een vooraf geboekte rit uw vluchtnummer en aankomstdatum en -tijd door, zodat de vlucht gevolgd kan worden. U kunt contact opnemen via de contactpagina." }
+        },
+        {
+          "@type": "Question",
+          "name": "Biedt taxi Vodice luchthaventransfers aan?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ja, taxi Vodice verzorgt transfers van en naar Split Airport en Zadar Airport, en op aanvraag ook andere regionale luchthavens. Prijzen voor vooraf geboekte transfers liggen vast en staan op de pagina luchthaventransfers." }
+        },
+        {
+          "@type": "Question",
+          "name": "Hoeveel kost een taxi in Vodice?",
+          "acceptedAnswer": { "@type": "Answer", "text": "De tarieven hangen af van de route en de afgelegde afstand. Lokale ritten binnen Vodice worden anders geprijsd dan langere ritten. Kortere lokale ritten worden berekend volgens het standaard taximetertarief, terwijl langere, vooraf geboekte transfers vaste prijzen hebben, te vinden op de pagina luchthaventransfers." }
+        },
+        {
+          "@type": "Question",
+          "name": "Rijdt taxi Vodice ook naar Šibenik of andere nabijgelegen plaatsen?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ja, taxi Vodice verzorgt stadstransfers naar onder meer Šibenik, Skradin en andere bestemmingen langs de Dalmatische kust. Bekijk de pagina stadstransfers voor meer details." }
+        },
+        {
+          "@type": "Question",
+          "name": "Kan ik taxi Vodice vooraf boeken?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ja, vooraf boeken wordt aangeraden voor luchthaventransfers, vroege ochtendvertrekken of het hoogseizoen, al worden last-minute lokale ritten ook geaccepteerd afhankelijk van beschikbaarheid. U kunt rechtstreeks boeken via de contactpagina." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is taxi Vodice beschikbaar voor ritten naar Nationaal Park Krka?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ja, dagtochten en excursies naar Nationaal Park Krka kunnen rechtstreeks met Bernard geregeld worden." }
+        },
+        {
+          "@type": "Question",
+          "name": "Accepteert taxi Vodice betalingen met kaart?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ja, betalingen met kaart worden geaccepteerd." }
+        }
+      ]
+    }
+  ]
+}

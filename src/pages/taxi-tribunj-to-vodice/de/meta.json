@@ -1,0 +1,86 @@
+{
+  "slug": "taxi-tribunj-nach-vodice",
+  "title": "Taxi Tribunj nach Vodice | Fester Transfer für 15 € | TAXI Bernard",
+  "description": "Privates Taxi und Transfer von Tribunj nach Vodice mit Bernard. Fester Preis von 15 € pro Fahrzeug, bis zu 4 Fahrgäste, Tür zu Tür, ohne Taxameter.",
+  "keywords": "taxi tribunj nach vodice, transfer tribunj nach vodice, taxi tribunj vodice",
+  "og_image": "https://taxivodice.hr/assets/img/espace-vodice.webp",
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Privater Taxitransfer",
+      "name": "Taxi Tribunj nach Vodice",
+      "description": "Privater Taxitransfer zum Festpreis von Tribunj nach Vodice, 15 Euro pro Fahrzeug für bis zu 4 Fahrgäste, Tür zu Tür.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "TAXI Vodice Bernard",
+        "telephone": "+385977539328",
+        "email": "bernard.mikulic@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Udovičića Benjamina 3b",
+          "addressLocality": "Vodice",
+          "postalCode": "22211",
+          "addressCountry": "HR"
+        }
+      },
+      "areaServed": [
+        "Tribunj",
+        "Vodice"
+      ],
+      "url": "https://taxivodice.hr/de/taxi-tribunj-nach-vodice/",
+      "offers": {
+        "@type": "Offer",
+        "price": "15",
+        "priceCurrency": "EUR",
+        "description": "Einfache private Fahrt von Tribunj nach Vodice, pro Fahrzeug für bis zu 4 Fahrgäste. Rückfahrt 30 €."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Was kostet ein Taxi von Tribunj nach Vodice?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ein Festpreis von 15 € pro Fahrzeug für bis zu 4 Fahrgäste, einfache Fahrt, Gepäck inklusive. Eine Rückfahrt kostet 30 €."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Gilt der Preis pro Person oder pro Fahrzeug?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Der Preis gilt pro Fahrzeug, nicht pro Person. Er deckt bis zu 4 Fahrgäste und Gepäck ohne Aufpreis ab, für 5 oder 6 Fahrgäste fällt eine kleine zusätzliche Gebühr an."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wo erfolgt die Abholung?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An Ihrer genauen Adresse in Tribunj, egal ob Wohnhaus, Hotel oder Apartment. Senden Sie die Adresse bei der Buchung, Bernard bestätigt dann den Treffpunkt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie weit im Voraus sollte ich buchen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Eine Buchung im Voraus wird empfohlen, um die Verfügbarkeit zu sichern, besonders in der Hochsaison im Sommer. Für eine spontane Fahrt rufen Sie Bernard einfach an oder schreiben Sie ihm direkt über WhatsApp."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann Bernard mehr als 4 Fahrgäste mitnehmen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, Bernards Renault Espace bietet Platz für bis zu 6 Fahrgäste. Für 5 oder 6 Fahrgäste fällt eine kleine zusätzliche Gebühr an, den genauen Betrag erfahren Sie direkt von Bernard."
+          }
+        }
+      ]
+    }
+  ]
+}

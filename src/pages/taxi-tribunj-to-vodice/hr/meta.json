@@ -1,0 +1,86 @@
+{
+  "slug": "taxi-tribunj-do-vodica",
+  "title": "Taksi Tribunj - Vodice | Fiksno €15 | TAXI Bernard",
+  "description": "Privatni taksi i transfer, relacija Tribunj - Vodice. Fiksno €15 po vozilu, do 4 putnika, od vrata do vrata. Rezervirajte izravno kod Bernarda.",
+  "keywords": "taksi tribunj - vodice, transfer tribunj - vodice, prijevoz tribunj - vodice",
+  "og_image": "https://taxivodice.hr/assets/img/espace-vodice.webp",
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Privatni taksi transfer",
+      "name": "Taksi Tribunj - Vodice",
+      "description": "Privatni taksi i transfer po fiksnoj cijeni, relacija Tribunj - Vodice, 15 eura po vozilu za do 4 putnika, od vrata do vrata.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "TAXI Vodice Bernard",
+        "telephone": "+385977539328",
+        "email": "bernard.mikulic@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Udovičića Benjamina 3b",
+          "addressLocality": "Vodice",
+          "postalCode": "22211",
+          "addressCountry": "HR"
+        }
+      },
+      "areaServed": [
+        "Tribunj",
+        "Vodice"
+      ],
+      "url": "https://taxivodice.hr/hr/taxi-tribunj-do-vodica/",
+      "offers": {
+        "@type": "Offer",
+        "price": "15",
+        "priceCurrency": "EUR",
+        "description": "Jednosmjerni privatni transfer, relacija Tribunj - Vodice, po vozilu za do 4 putnika. Povratno 30 eura."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Koliko košta taksi na relaciji Tribunj - Vodice?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fiksno 15 € po vozilu za do 4 putnika, u jednom smjeru, prtljaga uključena. Povratna vožnja iznosi 30 €."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Je li cijena po osobi ili po vozilu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cijena je po vozilu, ne po osobi. Uključuje do 4 putnika i prtljagu bez dodatne naplate, uz malu doplatu za 5 ili 6 putnika."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Gdje me preuzimate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Na vašoj točnoj adresi u Tribunju, bilo da je riječ o kući, hotelu ili apartmanu. Pošaljite adresu prilikom rezervacije i Bernard će potvrditi mjesto susreta."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Koliko unaprijed trebam rezervirati?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Preporučamo rezervaciju unaprijed kako bismo osigurali dostupnost, pogotovo tijekom ljetne sezone. Za vožnju u zadnji čas nazovite ili pišite Bernardu na WhatsApp."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Može li Bernard primiti više od 4 putnika?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da, Bernardov Renault Espace ima 6 sjedala. Za 5 ili 6 putnika naplaćuje se mala doplata, za točan iznos kontaktirajte Bernarda."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "slug": "taxi-vodice-murter",
+  "title": "Taxi Vodice - Murter | Prix fixe 50€ | TAXI Bernard",
+  "description": "Taxi et transfert privé de Vodice à Murter avec Bernard. Prix fixe 50€ par véhicule, jusqu'à 4 passagers, porte à porte, sans compteur.",
+  "keywords": "taxi vodice murter, transfert vodice murter, taxi vodice à murter",
+  "og_image": "https://taxivodice.hr/assets/img/espace-vodice.webp",
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Transfert taxi privé",
+      "name": "Taxi Vodice - Murter",
+      "description": "Transfert taxi privé à prix fixe de Vodice à Murter, 50 euros par véhicule pour un maximum de 4 passagers, porte à porte.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "TAXI Vodice Bernard",
+        "telephone": "+385977539328",
+        "email": "bernard.mikulic@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Udovičića Benjamina 3b",
+          "addressLocality": "Vodice",
+          "postalCode": "22211",
+          "addressCountry": "HR"
+        }
+      },
+      "areaServed": [
+        "Vodice",
+        "Murter"
+      ],
+      "url": "https://taxivodice.hr/fr/taxi-vodice-murter/",
+      "offers": {
+        "@type": "Offer",
+        "price": "50",
+        "priceCurrency": "EUR",
+        "description": "Transfert privé aller simple de Vodice à Murter, par véhicule pour un maximum de 4 passagers. Aller-retour 100€."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Combien coûte un taxi de Vodice à Murter ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un tarif fixe de 50€ par véhicule pour un maximum de 4 passagers, aller simple, bagages inclus. Un aller-retour coûte 100€."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Le prix est-il par personne ou par véhicule ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le prix est par véhicule, pas par personne. Il couvre jusqu'à 4 passagers et les bagages sans frais supplémentaires, avec un petit supplément pour 5 ou 6 passagers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Où faites-vous la prise en charge ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "À votre adresse exacte à Vodice, qu'il s'agisse d'une maison, d'un hôtel ou d'un appartement. Envoyez l'adresse lors de votre réservation et Bernard confirmera le point de rendez-vous."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien de temps à l'avance dois-je réserver ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Il est recommandé de réserver à l'avance pour garantir la disponibilité, en particulier pendant la haute saison estivale. Pour un trajet de dernière minute, appelez ou écrivez directement à Bernard sur WhatsApp."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bernard peut-il prendre plus de 4 passagers ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, la Renault Espace de Bernard peut accueillir jusqu'à 6 passagers. Un petit supplément s'applique pour 5 ou 6 passagers, contactez Bernard pour le montant exact."
+          }
+        }
+      ]
+    }
+  ]
+}

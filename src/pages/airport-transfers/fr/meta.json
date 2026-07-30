@@ -1,0 +1,43 @@
+{
+  "slug": "transferts-aeroport",
+  "title": "Transferts aéroport Vodice | à partir de 100€ | TAXI Bernard",
+  "description": "Transferts aéroport à prix fixe entre Vodice et les aéroports de Split et Zadar. Pas de compteur, pas de surprise, bagages inclus. Réservez directement avec Bernard.",
+  "keywords": "transfert aéroport vodice, taxi vodice aéroport split, taxi vodice aéroport zadar",
+  "og_image": "https://taxivodice.hr/assets/img/espace-6-seats.webp",
+  "schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Comment vais-je trouver mon chauffeur à l'aéroport ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Bernard vous attendra dans le hall des arrivées après la récupération des bagages, prêt à vous aider avec vos bagages. Si vous le souhaitez, vous pouvez confirmer les détails de la prise en charge à l'avance via la page de contact." }
+      },
+      {
+        "@type": "Question",
+        "name": "Que se passe-t-il si mon vol est retardé ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Pas de problème. Les vols sont suivis en temps réel, donc si votre vol est retardé, votre heure de prise en charge est ajustée automatiquement, sans frais supplémentaires." }
+      },
+      {
+        "@type": "Question",
+        "name": "Le prix est-il par personne ou par véhicule ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Le prix est par véhicule, pas par personne. Il couvre jusqu'à 4 passagers et les bagages sans frais supplémentaires, avec un petit supplément pour 5 ou 6 passagers." }
+      },
+      {
+        "@type": "Question",
+        "name": "Combien de temps à l'avance dois-je réserver un transfert aéroport Vodice ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Il est recommandé de réserver à l'avance pour garantir la disponibilité, en particulier pendant la haute saison estivale ou pour les vols tôt le matin ou tard le soir. Vous pouvez réserver directement via la page de contact." }
+      },
+      {
+        "@type": "Question",
+        "name": "Fournissez-vous des sièges enfant ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Oui, des sièges enfant et rehausseurs sont disponibles sur demande, il suffit de le mentionner lors de la réservation de votre transfert." }
+      },
+      {
+        "@type": "Question",
+        "name": "Puis-je aussi réserver un transfert vers Šibenik ou d'autres villes voisines ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Oui, Bernard couvre également les liaisons interurbaines, notamment Šibenik et Skradin. Voir la page des transferts interurbains pour plus de détails." }
+      }
+    ]
+  }
+}

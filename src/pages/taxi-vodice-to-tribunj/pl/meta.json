@@ -1,0 +1,86 @@
+{
+  "slug": "taxi-vodice-do-tribunj",
+  "title": "Taxi Vodice – Tribunj | Stała cena 15€ | TAXI Bernard",
+  "description": "Prywatne taxi i transfer Vodice – Tribunj z Bernardem. Stała cena 15€ za samochód, do 4 pasażerów, od drzwi do drzwi, bez taksometru.",
+  "keywords": "taxi vodice tribunj, transfer vodice tribunj, taxi z vodice do tribunj",
+  "og_image": "https://taxivodice.hr/assets/img/espace-vodice.webp",
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Prywatny transfer taxi",
+      "name": "Taxi Vodice – Tribunj",
+      "description": "Prywatny transfer taxi w stałej cenie Vodice – Tribunj, 15 euro za samochód dla maksymalnie 4 pasażerów, od drzwi do drzwi.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "TAXI Vodice Bernard",
+        "telephone": "+385977539328",
+        "email": "bernard.mikulic@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Udovičića Benjamina 3b",
+          "addressLocality": "Vodice",
+          "postalCode": "22211",
+          "addressCountry": "HR"
+        }
+      },
+      "areaServed": [
+        "Vodice",
+        "Tribunj"
+      ],
+      "url": "https://taxivodice.hr/pl/taxi-vodice-do-tribunj/",
+      "offers": {
+        "@type": "Offer",
+        "price": "15",
+        "priceCurrency": "EUR",
+        "description": "Transfer w jedną stronę Vodice – Tribunj, za samochód dla maksymalnie 4 pasażerów. Powrót 30€."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Ile kosztuje taxi Vodice – Tribunj?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Stała cena 15€ za samochód dla maksymalnie 4 pasażerów, w jedną stronę, bagaż wliczony w cenę. Przejazd powrotny kosztuje 30€."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy cena jest za osobę czy za pojazd?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cena jest za pojazd, nie za osobę. Obejmuje do 4 pasażerów i bagaż bez dodatkowych kosztów, przy 5 lub 6 pasażerach obowiązuje niewielka dopłata."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Skąd odbywa się odbiór?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pod dokładnym adresem w miejscowości Vodice, czy to dom, hotel czy apartament. Podaj adres podczas rezerwacji, a Bernard potwierdzi miejsce spotkania."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Z jakim wyprzedzeniem powinienem zarezerwować?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Rezerwacja z wyprzedzeniem jest zalecana, aby zagwarantować dostępność, szczególnie w szczycie sezonu letniego. W przypadku przejazdu w ostatniej chwili zadzwoń lub napisz do Bernarda na WhatsApp."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy Bernard może zabrać więcej niż 4 pasażerów?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak, Renault Espace Bernarda mieści do 6 pasażerów. Przy 5 lub 6 pasażerach obowiązuje niewielka dopłata, skontaktuj się z Bernardem, aby poznać dokładną kwotę."
+          }
+        }
+      ]
+    }
+  ]
+}

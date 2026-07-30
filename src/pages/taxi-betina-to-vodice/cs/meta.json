@@ -1,0 +1,86 @@
+{
+  "slug": "taxi-betina-vodice",
+  "title": "Taxi Betina – Vodice | Pevná cena 50€ | TAXI Bernard",
+  "description": "Soukromé taxi a transfer z Betiny do Vodic s Bernardem. Pevná cena 50€ za vůz, až 4 cestující, od dveří ke dveřím, bez taxametru.",
+  "keywords": "taxi betina vodice, transfer betina vodice, betina vodice taxi",
+  "og_image": "https://taxivodice.hr/assets/img/espace-vodice.webp",
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Private taxi transfer",
+      "name": "Taxi Betina – Vodice",
+      "description": "Soukromý taxi transfer za pevnou cenu z Betiny do Vodic, 50 eur za vůz pro až 4 cestující, od dveří ke dveřím.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "TAXI Vodice Bernard",
+        "telephone": "+385977539328",
+        "email": "bernard.mikulic@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Udovičića Benjamina 3b",
+          "addressLocality": "Vodice",
+          "postalCode": "22211",
+          "addressCountry": "HR"
+        }
+      },
+      "areaServed": [
+        "Betina",
+        "Vodice"
+      ],
+      "url": "https://taxivodice.hr/cs/taxi-betina-vodice/",
+      "offers": {
+        "@type": "Offer",
+        "price": "50",
+        "priceCurrency": "EUR",
+        "description": "Jednosměrný soukromý transfer z Betiny do Vodic, za vůz pro až 4 cestující. Zpáteční cesta 100€."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Kolik stojí taxi z Betiny do Vodic?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pevná cena 50€ za vůz pro až 4 cestující, jednosměrně, zavazadla v ceně. Zpáteční cesta stojí 100€."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Je cena za osobu, nebo za vozidlo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cena je za vozidlo, ne za osobu. Zahrnuje až 4 cestující a zavazadla bez příplatku, s malým příplatkem za 5 nebo 6 cestujících."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kde vyzvedáváte?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Na vaší přesné adrese v Betině, ať už doma, v hotelu nebo apartmánu. Adresu pošlete při rezervaci a Bernard potvrdí místo setkání."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Jak dlouho předem bych měl rezervovat?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Rezervace předem se doporučuje pro zajištění dostupnosti, zejména v hlavní letní sezóně. Pro jízdu na poslední chvíli zavolejte nebo napište Bernardovi na WhatsApp."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Může Bernard vzít více než 4 cestující?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ano, Bernardův Renault Espace pojme až 6 cestujících. Za 5 nebo 6 cestujících se účtuje malý příplatek, přesnou částku vám sdělí Bernard."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "slug": "repteri-transzferek",
+  "title": "Vodice-i reptéri transzferek | már 100€-tól | TAXI Bernard",
+  "description": "Fix árú Vodice-i reptéri transzferek a Split-i és Zadar-i repülőtérre. Nincs taxióra, nincsenek meglepetések, a csomagszállítással együtt. Foglaljon közvetlenül Bernarddal.",
+  "keywords": "vodice reptéri transzfer, taxi vodice split repülőtér, taxi vodice zadar repülőtér",
+  "og_image": "https://taxivodice.hr/assets/img/espace-6-seats.webp",
+  "schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Hogyan találom meg a sofőrömet a repülőtéren?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Bernard az érkezési csarnokban, a csomagkiadás után várja Önt, készen arra, hogy segítsen a csomagjaival. Ha szeretné, a felvétel részleteit előre is megerősítheti a kapcsolat oldalon keresztül." }
+      },
+      {
+        "@type": "Question",
+        "name": "Mi történik, ha a járatom késik?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Semmi gond. A járatokat valós időben figyeljük, így ha a járata késik, a felvételi időpont automatikusan módosul, felár nélkül." }
+      },
+      {
+        "@type": "Question",
+        "name": "Az ár személyenkénti vagy járművenkénti?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Az ár járművenkénti, nem személyenkénti. Akár 4 utast és a csomagokat is tartalmazza felár nélkül, 5 vagy 6 utas esetén kis felárat számítunk fel." }
+      },
+      {
+        "@type": "Question",
+        "name": "Mennyivel korábban érdemes lefoglalni egy Vodice-i reptéri transzfert?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Az előzetes foglalás ajánlott az elérhetőség biztosítására, különösen a nyári csúcsszezonban, valamint kora reggeli vagy késő esti járatok esetén. Közvetlenül a kapcsolat oldalon keresztül foglalhat." }
+      },
+      {
+        "@type": "Question",
+        "name": "Biztosítanak gyerekülést?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Igen, gyerekülés és kiegészítő ülőpárna kérésre elérhető, csak jelezze a transzfer foglalásakor." }
+      },
+      {
+        "@type": "Question",
+        "name": "Foglalhatok transzfert Šibenikbe vagy más közeli városokba is?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Igen, Bernard városközi útvonalakat is kiszolgál, beleértve Šibeniket és Skradint. Részletekért lásd a városok közötti transzferek oldalt." }
+      }
+    ]
+  }
+}

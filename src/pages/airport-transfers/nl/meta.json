@@ -1,0 +1,43 @@
+{
+  "slug": "luchthaventransfers",
+  "title": "Luchthaventransfers Vodice | vanaf 100€ | TAXI Bernard",
+  "description": "Luchthaventransfers Vodice tegen vaste prijs naar Split en Zadar Airport. Geen taximeter, geen verrassingen, bagage inbegrepen. Boek rechtstreeks bij Bernard.",
+  "keywords": "luchthaventransfer vodice, taxi vodice split airport, taxi vodice zadar airport",
+  "og_image": "https://taxivodice.hr/assets/img/espace-6-seats.webp",
+  "schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Hoe herken ik mijn chauffeur op de luchthaven?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Bernard wacht op u in de aankomsthal na de bagagebanden, klaar om te helpen met uw bagage. Als u dat wilt, kunt u de ophaaldetails vooraf bevestigen via de contactpagina." }
+      },
+      {
+        "@type": "Question",
+        "name": "Wat als mijn vlucht vertraging heeft?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Geen probleem. Vluchten worden in realtime gevolgd, dus als uw vlucht vertraging heeft, wordt uw ophaaltijd automatisch aangepast, zonder extra kosten." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is de prijs per persoon of per voertuig?",
+        "acceptedAnswer": { "@type": "Answer", "text": "De prijs is per voertuig, niet per persoon. Dit dekt tot 4 passagiers en bagage zonder extra kosten, met een kleine toeslag voor 5 of 6 passagiers." }
+      },
+      {
+        "@type": "Question",
+        "name": "Hoe ver van tevoren moet ik een luchthaventransfer in Vodice boeken?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Vooraf boeken wordt aangeraden om beschikbaarheid te garanderen, vooral tijdens het hoogseizoen of voor vroege ochtend- en late nachtvluchten. U kunt rechtstreeks boeken via de contactpagina." }
+      },
+      {
+        "@type": "Question",
+        "name": "Bieden jullie kinderzitjes aan?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ja, kinderzitjes en zitverhogers zijn op aanvraag beschikbaar, vermeld dit gewoon bij het boeken van uw transfer." }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan ik ook een transfer naar Šibenik of andere nabijgelegen plaatsen boeken?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ja, Bernard verzorgt ook stadstransfers naar onder meer Šibenik en Skradin. Bekijk de pagina stadstransfers voor meer details." }
+      }
+    ]
+  }
+}

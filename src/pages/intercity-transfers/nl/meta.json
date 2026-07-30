@@ -1,0 +1,48 @@
+{
+  "slug": "stadstransfers",
+  "title": "Transfers Vodice | TAXI Bernard",
+  "description": "Transfers vanaf Vodice naar Šibenik, Split, Zadar, Skradin, Zagreb, Dubrovnik en Makarska tegen vaste prijs. Geen taximeter, geen verrassingen. Boek rechtstreeks bij Bernard.",
+  "keywords": "vodice transfers, taxi vodice sibenik, taxi vodice split, taxi vodice zadar, taxi vodice skradin",
+  "og_image": "https://taxivodice.hr/assets/img/espace-6-seats.webp",
+  "schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Hoe ver van tevoren moet ik een transfer vanuit Vodice boeken?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Vooraf boeken wordt aangeraden om beschikbaarheid te garanderen, vooral tijdens het hoogseizoen. U kunt rechtstreeks boeken via de contactpagina." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is de prijs per persoon of per voertuig?",
+        "acceptedAnswer": { "@type": "Answer", "text": "De prijs is per voertuig, niet per persoon. Dit dekt tot 4 passagiers en bagage zonder extra kosten, met een kleine toeslag voor 5 of 6 passagiers." }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan ik een enkele reis of een retourrit boeken?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Beide opties zijn mogelijk. Laat Bernard bij het boeken gewoon uw plannen weten, dan regelt hij de ophaaltijd die u het beste uitkomt." }
+      },
+      {
+        "@type": "Question",
+        "name": "Bieden jullie ophalen bij hotel of adres aan?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ja, Bernard haalt u rechtstreeks op bij uw hotel, appartement of elk ander adres in Vodice, u hoeft niet naar een centrale locatie te komen." }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan ik onderweg een tussenstop maken?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Korte tussenstops kunnen meestal geregeld worden, vermeld dit gewoon bij het boeken zodat Bernard de route en timing hierop kan afstemmen." }
+      },
+      {
+        "@type": "Question",
+        "name": "Wat als mijn bestemming niet vermeld staat?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Geen probleem, neem rechtstreeks contact op met Bernard via de contactpagina met uw bestemming voor een prijsopgave op maat." }
+      },
+      {
+        "@type": "Question",
+        "name": "Accepteren jullie betalingen met kaart?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ja, betalingen met kaart worden geaccepteerd." }
+      }
+    ]
+  }
+}

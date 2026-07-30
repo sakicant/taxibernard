@@ -1,0 +1,48 @@
+{
+  "slug": "varosok-kozotti-transzferek",
+  "title": "Vodice-i transzferek | TAXI Bernard",
+  "description": "Fix árú transzferek Vodicéből Šibenikbe, Splitbe, Zadarba, Skradinba, Zágrábba, Dubrovnikba és Makarskára. Nincs taxióra, nincsenek meglepetések. Foglaljon közvetlenül Bernarddal.",
+  "keywords": "vodice transzferek, taxi vodice sibenik, taxi vodice split, taxi vodice zadar, taxi vodice skradin",
+  "og_image": "https://taxivodice.hr/assets/img/espace-6-seats.webp",
+  "schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Mennyivel korábban érdemes lefoglalni egy Vodice-i transzfert?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Az előzetes foglalás ajánlott az elérhetőség biztosítására, különösen a nyári csúcsszezonban. Közvetlenül a kapcsolat oldalon keresztül foglalhat." }
+      },
+      {
+        "@type": "Question",
+        "name": "Az ár személyenkénti vagy járművenkénti?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Az ár járművenkénti, nem személyenkénti. Akár 4 utast és a csomagokat is tartalmazza felár nélkül, 5 vagy 6 utas esetén kis felárat számítunk fel." }
+      },
+      {
+        "@type": "Question",
+        "name": "Foglalhatok egyirányú vagy oda-vissza utat?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Mindkét lehetőség elérhető. Csak jelezze Bernardnak a terveit foglaláskor, ő pedig egyezteti az Önnek megfelelő felvételi időpontot." }
+      },
+      {
+        "@type": "Question",
+        "name": "Biztosítanak szállodai vagy címre történő felvételt?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Igen, Bernard közvetlenül a szállodájából, apartmanjából vagy bármely vodicei címről felveszi Önt, nem szükséges egy központi helyen találkozni." }
+      },
+      {
+        "@type": "Question",
+        "name": "Tarthatunk megállót útközben?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Rövid megállók általában megszervezhetők, csak jelezze foglaláskor, hogy Bernard ennek megfelelően tervezhesse az útvonalat és az időzítést." }
+      },
+      {
+        "@type": "Question",
+        "name": "Mi van, ha az úti célom nincs feltüntetve?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Semmi gond, vegye fel közvetlenül a kapcsolatot Bernarddal a kapcsolat oldalon keresztül, az úti célja megadásával, egyedi árajánlatért." }
+      },
+      {
+        "@type": "Question",
+        "name": "Elfogadnak bankkártyás fizetést?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Igen, a bankkártyás fizetést elfogadjuk." }
+      }
+    ]
+  }
+}

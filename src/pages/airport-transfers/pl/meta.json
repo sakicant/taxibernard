@@ -1,0 +1,43 @@
+{
+  "slug": "transfery-lotniskowe",
+  "title": "Transfery Lotniskowe Vodice | już od 100€ | TAXI Bernard",
+  "description": "Transfery lotniskowe Vodice w stałej cenie na Lotnisko Split i Zadar. Bez taksometru, bez niespodzianek, bagaż wliczony w cenę. Rezerwuj bezpośrednio u Bernarda.",
+  "keywords": "transfer lotniskowy vodice, taxi vodice lotnisko split, taxi vodice lotnisko zadar",
+  "og_image": "https://taxivodice.hr/assets/img/espace-6-seats.webp",
+  "schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Jak znajdę mojego kierowcę na lotnisku?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Bernard będzie czekał na Ciebie w hali przylotów, zaraz po odbiorze bagażu, gotowy pomóc z bagażem. Jeśli chcesz, możesz z wyprzedzeniem potwierdzić szczegóły odbioru poprzez stronę kontaktową." }
+      },
+      {
+        "@type": "Question",
+        "name": "Co jeśli mój lot się opóźni?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Żaden problem. Loty są monitorowane w czasie rzeczywistym, więc jeśli Twój lot się opóźni, godzina odbioru zostanie automatycznie dostosowana bez dodatkowych opłat." }
+      },
+      {
+        "@type": "Question",
+        "name": "Czy cena jest za osobę czy za pojazd?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Cena jest za pojazd, nie za osobę. Obejmuje do 4 pasażerów i bagaż bez dodatkowych kosztów, przy 5 lub 6 pasażerach obowiązuje niewielka dopłata." }
+      },
+      {
+        "@type": "Question",
+        "name": "Z jakim wyprzedzeniem powinienem zarezerwować transfer lotniskowy Vodice?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Rezerwacja z wyprzedzeniem jest zalecana, aby zagwarantować dostępność, szczególnie w szczycie sezonu letniego lub przy wczesnych porannych i późnych nocnych lotach. Możesz zarezerwować bezpośrednio poprzez stronę kontaktową." }
+      },
+      {
+        "@type": "Question",
+        "name": "Czy zapewniacie foteliki dziecięce?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Tak, foteliki dziecięce i podwyższenia (booster) są dostępne na życzenie, wystarczy o tym wspomnieć podczas rezerwacji transferu." }
+      },
+      {
+        "@type": "Question",
+        "name": "Czy mogę też zarezerwować transfer do Šibenika lub innych pobliskich miejscowości?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Tak, Bernard obsługuje również trasy międzymiastowe, w tym Šibenik i Skradin. Szczegóły znajdziesz na stronie transferów międzymiastowych." }
+      }
+    ]
+  }
+}
